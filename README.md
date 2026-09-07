@@ -1,16 +1,108 @@
-# React + Vite
+# 📸 Photography Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack photography website designed to showcase photography portfolios, services, testimonials, and provide an online booking experience.
 
-Currently, two official plugins are available:
+The project includes a customer-facing website along with an admin dashboard for managing website content and bookings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🌐 Client Website
 
-## Expanding the ESLint configuration
+- Modern and responsive UI
+- Home page
+- Photographer portfolio
+- Photography services
+- Pricing section
+- Testimonials
+- Contact page
+- Online booking system
+- Responsive navigation
+- Mobile-friendly design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔐 Admin Dashboard
+
+- Admin authentication
+- Admin dashboard
+- Manage portfolio
+- Manage services
+- Manage pricing
+- Manage testimonials
+- View and manage bookings
+
+### ⚙️ Backend
+
+- RESTful API
+- User authentication
+- Booking management
+- Portfolio management
+- Services management
+- Pricing management
+- Testimonials management
+- MongoDB database integration
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Vite
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+- REST API
+
+---
+
+## 📁 Project Structure
+
+```text
+photography_website/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   └── server.js
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── Services.jsx
+│   │   ├── Pricing.jsx
+│   │   ├── Testimonials.jsx
+│   │   ├── Booking.jsx
+│   │   └── Contact.jsx
+│   │
+│   └── App.jsx
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md

@@ -51,7 +51,7 @@ const AdminTestimonials = () => {
             }
 
             const response = await fetch(
-                "http://localhost:5000/api/testimonials/admin",
+                "https://photography-website-api.onrender.com/api/testimonials/admin",
                 {
                     headers: {
                         Authorization:
@@ -211,8 +211,8 @@ const AdminTestimonials = () => {
 
 
             const url = editingId
-                ? `http://localhost:5000/api/testimonials/${editingId}`
-                : "http://localhost:5000/api/testimonials";
+    ? `https://photography-website-api.onrender.com/api/testimonials/${editingId}`
+    : "https://photography-website-api.onrender.com/api/testimonials";
 
             const method = editingId
                 ? "PUT"
@@ -350,7 +350,7 @@ const AdminTestimonials = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/api/testimonials/${testimonial._id}`,
+                `https://photography-website-api.onrender.com/api/testimonials/${testimonial._id}`,
                 {
                     method: "PUT",
 
@@ -433,7 +433,7 @@ const AdminTestimonials = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/api/testimonials/${testimonial._id}`,
+                `https://photography-website-api.onrender.com/api/testimonials/${testimonial._id}`,
                 {
                     method: "PUT",
 
@@ -527,7 +527,7 @@ const AdminTestimonials = () => {
 
 
             const response = await fetch(
-                `http://localhost:5000/api/testimonials/${id}`,
+                `https://photography-website-api.onrender.com/api/testimonials/${id}`,
                 {
                     method: "DELETE",
 

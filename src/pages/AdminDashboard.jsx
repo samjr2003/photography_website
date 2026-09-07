@@ -320,11 +320,11 @@ const AdminDashboard = () => {
             Portfolio
           </a>
 
-          <a href="/admin/dashboard">
+          <a href="/admin/services">
             Services
           </a>
 
-          <a href="/admin/dashboard">
+          <a href="/admin/testimonials">
             Testimonials
           </a>
 

@@ -4,6 +4,7 @@ const router = express.Router();
 
 const {
   getServices,
+  getAllServicesAdmin,
   createService,
   updateService,
   deleteService,
@@ -22,9 +23,18 @@ const upload = require("../middleware/uploadMiddleware");
 
 router.get("/", getServices);
 
+
+
 // ==========================================
 // ADMIN - CREATE SERVICE
 // ==========================================
+
+router.get(
+  "/admin",
+  protect,
+  adminOnly,
+  getAllServicesAdmin
+);
 
 router.post(
   "/",

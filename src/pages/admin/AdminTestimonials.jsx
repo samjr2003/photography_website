@@ -172,43 +172,15 @@ const AdminTestimonials = () => {
                 return;
             }
 
-            const data = new FormData();
-
-            data.append(
-                "quote",
-                formData.quote
-            );
-
-            data.append(
-                "name",
-                formData.name
-            );
-
-            data.append(
-                "event",
-                formData.event
-            );
-
-            data.append(
-                "location",
-                formData.location
-            );
-
-            data.append(
-                "featured",
-                String(formData.featured)
-            );
-
-            data.append(
-                "active",
-                String(formData.active)
-            );
-
-            data.append(
-                "order",
-                String(formData.order)
-            );
-
+           const data = {
+    quote: formData.quote,
+    name: formData.name,
+    event: formData.event,
+    location: formData.location,
+    featured: formData.featured,
+    active: formData.active,
+    order: Number(formData.order) || 0,
+};
 
             const url = editingId
     ? `https://photography-website-api.onrender.com/api/testimonials/${editingId}`
@@ -223,13 +195,13 @@ const AdminTestimonials = () => {
                 url,
                 {
                     method,
+headers: {
+    "Content-Type": "application/json",
+    Authorization:
+        `Bearer ${token}`,
+},
 
-                    headers: {
-                        Authorization:
-                            `Bearer ${token}`,
-                    },
-
-                    body: data,
+body: JSON.stringify(data),
                 }
             );
 

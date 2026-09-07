@@ -30,7 +30,7 @@ const AdminServices = () => {
 
         try {
             const response = await fetch(
-                "https://photography-website-api.onrender.com/api/services"
+                "https://photography-website-api.onrender.com/api/services/admin"
             );
 
             const data = await response.json();

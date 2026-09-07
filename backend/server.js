@@ -25,30 +25,42 @@ connectDB();
 // ==============================
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:3000",
-  "https://photography-website-jade-ten.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://photography-website-jade-ten.vercel.app",
 ];
 
 app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests without an origin
-      // such as Postman or server-to-server requests
-      if (!origin) {
-        return callback(null, true);
-      }
+    cors({
+        origin: function (origin, callback) {
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+            // Allow requests without an origin
+            // such as Postman or server-to-server requests
+            if (!origin) {
+                return callback(null, true);
+            }
 
-      return callback(
-        new Error("Not allowed by CORS")
-      );
-    },
-    credentials: true,
-  })
+            // Allow known origins
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+
+            // Allow Vercel deployments for this project
+            if (
+                /^https:\/\/photography-website-[a-z0-9-]+\.vercel\.app$/i.test(
+                    origin
+                )
+            ) {
+                return callback(null, true);
+            }
+
+            return callback(
+                new Error("Not allowed by CORS")
+            );
+        },
+
+        credentials: true,
+    })
 );
 
 app.use(express.json());
@@ -70,9 +82,9 @@ app.use("/api/pricing", pricingRoutes);
 // ==============================
 
 app.get("/", (req, res) => {
-  res.json({
-    message: "Photography Website API is running",
-  });
+    res.json({
+        message: "Photography Website API is running",
+    });
 });
 
 // ==============================
@@ -82,5 +94,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

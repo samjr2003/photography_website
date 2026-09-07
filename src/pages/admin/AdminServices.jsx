@@ -30,7 +30,7 @@ const AdminServices = () => {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:5000/api/services"
+                "https://photography-website-api.onrender.com/api/services"
             );
 
             const data = await response.json();
@@ -196,8 +196,8 @@ const AdminServices = () => {
             }
 
             const url = editingId
-                ? `http://localhost:5000/api/services/${editingId}`
-                : "http://localhost:5000/api/services";
+    ? `https://photography-website-api.onrender.com/api/services/${editingId}`
+    : "https://photography-website-api.onrender.com/api/services";
 
             const method = editingId
                 ? "PUT"
@@ -312,7 +312,7 @@ const AdminServices = () => {
             );
 
             const response = await fetch(
-                `http://localhost:5000/api/services/${service._id}`,
+                `https://photography-website-api.onrender.com/api/services/${service._id}`,
                 {
                     method: "PUT",
 
@@ -388,7 +388,7 @@ const AdminServices = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/api/services/${id}`,
+                `https://photography-website-api.onrender.com/api/services/${id}`,
                 {
                     method: "DELETE",
 

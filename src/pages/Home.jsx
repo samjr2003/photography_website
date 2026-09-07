@@ -28,7 +28,7 @@ const Home = () => {
     const fetchFeaturedPortfolio = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/portfolio/featured"
+                "https://photography-website-api.onrender.com/api/portfolio/featured"
             );
 
             const data = await response.json();
@@ -65,7 +65,7 @@ const Home = () => {
     const fetchServices = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/services"
+                "https://photography-website-api.onrender.com/api/services"
             );
 
             const data = await response.json();
@@ -111,7 +111,7 @@ const Home = () => {
     const fetchFeaturedTestimonial = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/testimonials"
+                "https://photography-website-api.onrender.com/api/testimonials"
             );
 
             const data = await response.json();

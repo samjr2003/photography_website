@@ -16,8 +16,8 @@ const Testimonials = () => {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/testimonials"
-      );
+  "https://photography-website-api.onrender.com/api/testimonials"
+);
 
       const data = await response.json();
 

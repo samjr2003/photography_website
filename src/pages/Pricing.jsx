@@ -16,9 +16,8 @@ const Pricing = () => {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/pricing"
-      );
-
+  "https://photography-website-api.onrender.com/api/pricing"
+);
       const data = await response.json();
 
       if (!response.ok) {

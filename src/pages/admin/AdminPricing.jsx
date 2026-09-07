@@ -77,7 +77,7 @@ const AdminPricing = () => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/pricing/admin",
+        "https://photography-website-api.onrender.com/api/pricing/admin",
         {
           method: "GET",
           headers: {
@@ -214,8 +214,8 @@ const AdminPricing = () => {
       };
 
       const url = editingId
-        ? `http://localhost:5000/api/pricing/${editingId}`
-        : "http://localhost:5000/api/pricing";
+  ? `https://photography-website-api.onrender.com/api/pricing/${editingId}`
+  : "https://photography-website-api.onrender.com/api/pricing";
 
       const response = await fetch(
         url,
@@ -326,7 +326,7 @@ const AdminPricing = () => {
       const token = getToken();
 
       const response = await fetch(
-        `http://localhost:5000/api/pricing/${pkg._id}`,
+        `https://photography-website-api.onrender.com/api/pricing/${pkg._id}`,
         {
           method: "PUT",
 
@@ -388,7 +388,7 @@ const AdminPricing = () => {
       const token = getToken();
 
       const response = await fetch(
-        `http://localhost:5000/api/pricing/${pkg._id}`,
+        `https://photography-website-api.onrender.com/api/pricing/${pkg._id}`,
         {
           method: "PUT",
 
@@ -459,7 +459,7 @@ const AdminPricing = () => {
       const token = getToken();
 
       const response = await fetch(
-        `http://localhost:5000/api/pricing/${pkg._id}`,
+        `https://photography-website-api.onrender.com/api/pricing/${pkg._id}`,
         {
           method: "DELETE",
 

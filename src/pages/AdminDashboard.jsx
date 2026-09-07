@@ -38,7 +38,7 @@ const AdminDashboard = () => {
       // -------------------------------------------------------
 
       const statsResponse = await fetch(
-        "http://localhost:5000/api/admin/booking-stats",
+        "https://photography-website-api.onrender.com/api/admin/booking-stats",
         {
           method: "GET",
           headers: {
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
       // -------------------------------------------------------
 
       const bookingsResponse = await fetch(
-        "http://localhost:5000/api/admin/bookings",
+        "https://photography-website-api.onrender.com/api/admin/bookings",
         {
           method: "GET",
           headers: {
@@ -143,7 +143,7 @@ const AdminDashboard = () => {
         localStorage.getItem("adminToken");
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/bookings/${bookingId}/status`,
+        `https://photography-website-api.onrender.com/api/admin/bookings/${bookingId}/status`,
         {
           method: "PATCH",
 
@@ -223,7 +223,7 @@ const AdminDashboard = () => {
         localStorage.getItem("adminToken");
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/bookings/${bookingId}`,
+        `https://photography-website-api.onrender.com/api/admin/bookings/${bookingId}`,
         {
           method: "DELETE",
 

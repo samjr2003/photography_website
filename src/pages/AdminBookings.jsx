@@ -76,7 +76,7 @@ const AdminBookings = () => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/bookings",
+        "https://photography-website-api.onrender.com/api/bookings",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -119,7 +119,7 @@ const AdminBookings = () => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/bookings/stats",
+        "https://photography-website-api.onrender.com/api/bookings/stats",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -194,7 +194,7 @@ const AdminBookings = () => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/bookings/${id}`,
+       `https://photography-website-api.onrender.com/api/bookings/${id}`,
         {
           method: "PUT",
           headers: {
@@ -280,7 +280,7 @@ const AdminBookings = () => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/bookings/${id}`,
+        `https://photography-website-api.onrender.com/api/bookings/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -77,7 +77,7 @@ const AdminPortfolio = () => {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/portfolio"
+        "https://photography-website-api.onrender.com/api/portfolio"
       );
 
       const data =
@@ -233,8 +233,8 @@ const AdminPortfolio = () => {
       }
 
       const url = editingId
-        ? `http://localhost:5000/api/portfolio/${editingId}`
-        : "http://localhost:5000/api/portfolio";
+  ? `https://photography-website-api.onrender.com/api/portfolio/${editingId}`
+  : "https://photography-website-api.onrender.com/api/portfolio";
 
       const method = editingId
         ? "PUT"
@@ -352,7 +352,7 @@ const AdminPortfolio = () => {
 
       const response =
         await fetch(
-          `http://localhost:5000/api/portfolio/${id}`,
+          `https://photography-website-api.onrender.com/api/portfolio/${id}`,
           {
             method: "DELETE",
 

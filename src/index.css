@@ -1,0 +1,10984 @@
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #FAF9F6;
+  color: #1A1A1A;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 82px;
+
+  background:#FAF9F6;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1400px;
+
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   NAVBAR LOGO
+========================================================= */
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+
+  line-height: 1;
+
+  min-width: 140px;
+}
+
+.logo-main {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #111111;
+}
+
+.logo-sub {
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   NAVBAR LINKS
+========================================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #444444;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  padding: 8px 0;
+
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #000000;
+}
+
+
+/* Active navigation link */
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: #111111;
+
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-links a.active {
+  color: #111111;
+}
+
+
+/* =========================================================
+   NAVBAR BOOKING BUTTON
+========================================================= */
+
+.navbar-cta {
+  text-decoration: none;
+
+  background: #111111;
+  color: #ffffff;
+
+  padding: 13px 22px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar-cta:hover {
+  background: #333333;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.mobile-menu-button span {
+  width: 24px;
+  height: 2px;
+
+  background: #111111;
+
+  display: block;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 82px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* Hero dark overlay */
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.52);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1000px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  animation: heroFadeIn 1s ease forwards;
+}
+
+
+/* Hero subtitle */
+
+.hero-subtitle {
+  margin-bottom: 24px;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  color: #dddddd;
+}
+
+
+/* Hero heading */
+
+.hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 7vw, 92px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  font-style: italic;
+}
+
+
+/* Hero description */
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.hero-button {
+  display: inline-block;
+
+  padding: 15px 28px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Primary button */
+
+.hero-button.primary {
+  background: #ffffff;
+
+  color: #111111;
+}
+
+.hero-button.primary:hover {
+  background: #eeeeee;
+}
+
+
+/* Secondary button */
+
+.hero-button.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #ffffff;
+}
+
+.hero-button.secondary:hover {
+  background: #ffffff;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   HERO SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+}
+
+.hero-scroll span {
+  width: 1px;
+  height: 35px;
+
+  background: #ffffff;
+
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+.hero-scroll p {
+  margin: 0;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollLine {
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scaleY(0.7);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scaleY(1);
+  }
+}
+
+
+/* =========================================================
+   INTRODUCTION SECTION
+========================================================= */
+
+.intro-section {
+  width: 100%;
+
+  padding: 120px 30px;
+
+  background: #FAF9F6;
+}
+
+.intro-content {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* Section label */
+
+.section-label {
+  margin: 0 0 22px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: #777777;
+}
+
+
+/* Introduction heading */
+
+.intro-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(38px, 5vw, 62px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.intro-content h2 span {
+  font-style: italic;
+}
+
+
+/* Introduction description */
+
+.intro-description {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #666666;
+}
+
+
+/* Introduction button */
+
+.intro-button {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 13px 25px;
+
+  border: 1px solid #222222;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  color: #111111;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.intro-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NAVBAR RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar-links {
+    gap: 16px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+
+  .navbar-cta {
+    padding: 12px 16px;
+
+    font-size: 12px;
+  }
+
+  .navbar-container {
+    padding: 0 25px;
+  }
+}
+
+
+/* =========================================================
+   NAVBAR RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar-links,
+  .navbar-cta {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .navbar-container {
+    position: relative;
+  }
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+
+    color: #333333;
+
+    padding: 14px 0;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .mobile-menu a.active {
+    color: #000000;
+
+    font-weight: 600;
+  }
+
+  .mobile-booking-button {
+    margin-top: 15px;
+
+    text-align: center;
+
+    background: #111111;
+
+    color: #ffffff !important;
+
+    padding: 14px !important;
+
+    border-bottom: none !important;
+  }
+}
+
+
+/* =========================================================
+   HERO RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: calc(100vh - 82px);
+
+    background-position: center;
+  }
+
+  .hero-content {
+    width: 88%;
+  }
+
+  .hero-subtitle {
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 65px);
+
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-button {
+    width: 190px;
+
+    text-align: center;
+  }
+
+  .intro-section {
+    padding: 80px 25px;
+  }
+
+  .intro-content h2 {
+    font-size: 38px;
+  }
+
+  .intro-description {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   PHOTOGRAPHY CATEGORIES
+========================================================= */
+
+.categories-section {
+  width: 100%;
+  padding: 120px 40px;
+  background: #F3F1EC;
+}
+
+.categories-header {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.categories-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.categories-header h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.categories-grid {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.category-card {
+  position: relative;
+
+  height: 500px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  display: block;
+
+  background: #111111;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.7s ease;
+}
+
+
+/* Dark overlay */
+
+.category-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.08) 65%,
+    rgba(0, 0, 0, 0.05)
+  );
+
+  transition: background 0.4s ease;
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.category-content {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 30px;
+
+  color: #ffffff;
+
+  z-index: 2;
+}
+
+.category-content span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #dddddd;
+}
+
+.category-content h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 42px;
+
+  font-weight: 400;
+}
+
+.category-content p {
+  margin-top: 10px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   CATEGORY HOVER
+========================================================= */
+
+.category-card:hover img {
+  transform: scale(1.06);
+}
+
+.category-card:hover .category-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.12) 70%,
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+
+/* =========================================================
+   CATEGORY RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .categories-section {
+    padding: 80px 20px;
+  }
+
+  .categories-header {
+    margin-bottom: 40px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .category-card {
+    height: 420px;
+  }
+
+  .category-content {
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .category-content h3 {
+    font-size: 36px;
+  }
+
+  .category-content p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   FEATURED PORTFOLIO
+========================================================= */
+
+.featured-section {
+  width: 100%;
+
+  padding: 120px 40px;
+
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   FEATURED HEADER
+========================================================= */
+
+.featured-header {
+  max-width: 1400px;
+
+  margin: 0 auto 55px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.featured-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.featured-header h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.featured-view-all {
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid #111111;
+
+  padding-bottom: 5px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.featured-view-all:hover {
+  opacity: 0.6;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FEATURED GRID
+========================================================= */
+
+.featured-grid {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: 280px;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   FEATURED ITEM
+========================================================= */
+
+.featured-item {
+  position: relative;
+
+  display: block;
+
+  overflow: hidden;
+
+  background: #111111;
+}
+
+.featured-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.7s ease;
+}
+
+
+/* Large image */
+
+.featured-large {
+  grid-column: span 2;
+
+  grid-row: span 2;
+}
+
+
+/* Wide image */
+
+.featured-wide {
+  grid-column: span 2;
+}
+
+
+/* =========================================================
+   FEATURED OVERLAY
+========================================================= */
+
+.featured-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 25px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent 55%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+.featured-overlay span {
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  transform: translateY(10px);
+
+  transition: transform 0.4s ease;
+}
+
+
+/* =========================================================
+   FEATURED HOVER
+========================================================= */
+
+.featured-item:hover img {
+  transform: scale(1.06);
+}
+
+.featured-item:hover .featured-overlay {
+  opacity: 1;
+}
+
+.featured-item:hover .featured-overlay span {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   FEATURED RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .featured-section {
+    padding: 90px 25px;
+  }
+
+  .featured-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 40px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 250px;
+  }
+
+  .featured-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .featured-wide {
+    grid-column: span 2;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .featured-section {
+    padding: 75px 20px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 350px;
+
+    gap: 12px;
+  }
+
+  .featured-large,
+  .featured-wide {
+    grid-column: span 1;
+
+    grid-row: span 1;
+  }
+
+  .featured-overlay {
+    opacity: 1;
+  }
+
+  .featured-overlay span {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   SERVICES PREVIEW
+========================================================= */
+
+.services-preview-section {
+  width: 100%;
+
+  padding: 120px 40px;
+
+  background: #F3F1EC;
+}
+
+
+/* =========================================================
+   SERVICES HEADER
+========================================================= */
+
+.services-preview-header {
+  max-width: 850px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.services-preview-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.services-preview-header h2 span {
+  font-style: italic;
+}
+
+.services-preview-description {
+  max-width: 620px;
+
+  margin: 25px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #666666;
+}
+
+
+/* =========================================================
+   SERVICES LIST
+========================================================= */
+
+.services-list {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  border-top: 1px solid #dcdcd8;
+}
+
+
+/* =========================================================
+   SERVICE ROW
+========================================================= */
+
+.service-row {
+  display: grid;
+
+  grid-template-columns: 80px 1fr 60px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 35px 10px;
+
+  border-bottom: 1px solid #dcdcd8;
+
+  text-decoration: none;
+
+  color: #111111;
+
+  transition:
+    background 0.35s ease,
+    padding 0.35s ease;
+}
+
+.service-row:hover {
+  background: #ffffff;
+
+  padding-left: 25px;
+
+  padding-right: 25px;
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+========================================================= */
+
+.service-number {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+
+/* =========================================================
+   SERVICE INFORMATION
+========================================================= */
+
+.service-info h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.service-info p {
+  max-width: 600px;
+
+  margin-top: 10px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   SERVICE ARROW
+========================================================= */
+
+.service-arrow {
+  font-size: 25px;
+
+  font-weight: 300;
+
+  text-align: right;
+
+  color: #555555;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-row:hover .service-arrow {
+  transform: translateX(8px);
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   SERVICES BUTTON
+========================================================= */
+
+.services-preview-button-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 50px;
+}
+
+.services-preview-button {
+  display: inline-block;
+
+  padding: 14px 28px;
+
+  border: 1px solid #222222;
+
+  text-decoration: none;
+
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.services-preview-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SERVICES RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .services-preview-section {
+    padding: 80px 20px;
+  }
+
+  .services-preview-header {
+    margin-bottom: 45px;
+  }
+
+  .services-preview-description {
+    font-size: 14px;
+  }
+
+  .service-row {
+    grid-template-columns: 40px 1fr 30px;
+
+    gap: 15px;
+
+    padding: 25px 5px;
+  }
+
+  .service-row:hover {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+  .service-info h3 {
+    font-size: 22px;
+  }
+
+  .service-info p {
+    font-size: 13px;
+  }
+
+  .service-arrow {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   TESTIMONIALS PREVIEW
+========================================================= */
+
+.testimonials-preview-section {
+  width: 100%;
+  padding: 120px 40px;
+  background: #ffffff;
+}
+
+.testimonials-preview-header {
+  max-width: 850px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.testimonials-preview-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.testimonials-preview-header h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FEATURED TESTIMONIAL
+========================================================= */
+
+.testimonial-feature {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 520px;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.testimonial-quote {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 70px;
+
+  background: #f7f7f5;
+}
+
+.quote-mark {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 70px;
+
+  line-height: 0.7;
+
+  color: #999999;
+
+  margin-bottom: 25px;
+}
+
+.testimonial-quote blockquote {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(25px, 3vw, 38px);
+
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  color: #222222;
+}
+
+
+/* =========================================================
+   TESTIMONIAL AUTHOR
+========================================================= */
+
+.testimonial-author {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 35px;
+}
+
+.testimonial-author strong {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  color: #111111;
+}
+
+.testimonial-author span {
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+
+/* =========================================================
+   TESTIMONIAL IMAGE
+========================================================= */
+
+.testimonial-image {
+  overflow: hidden;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.testimonial-feature:hover .testimonial-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   TESTIMONIAL LINK
+========================================================= */
+
+.testimonials-link-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 50px;
+}
+
+.testimonials-link {
+  text-decoration: none;
+
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid #111111;
+
+  padding-bottom: 5px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.testimonials-link:hover {
+  opacity: 0.6;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TESTIMONIAL RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .testimonials-preview-section {
+    padding: 90px 25px;
+  }
+
+  .testimonial-feature {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .testimonial-quote {
+    padding: 55px 40px;
+
+    order: 2;
+  }
+
+  .testimonial-image {
+    height: 450px;
+
+    order: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .testimonials-preview-section {
+    padding: 75px 20px;
+  }
+
+  .testimonials-preview-header {
+    margin-bottom: 40px;
+  }
+
+  .testimonial-quote {
+    padding: 45px 25px;
+  }
+
+  .testimonial-quote blockquote {
+    font-size: 27px;
+  }
+
+  .testimonial-image {
+    height: 350px;
+  }
+
+  .quote-mark {
+    font-size: 55px;
+  }
+}
+
+/* =========================================================
+   BOOKING CTA
+========================================================= */
+
+.booking-cta-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+
+/* Dark overlay */
+
+.booking-cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.58);
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.booking-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.booking-label {
+  color: #dddddd;
+}
+
+.booking-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 6vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+.booking-cta-content h2 span {
+  font-style: italic;
+}
+
+.booking-cta-content > p:not(.section-label) {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.booking-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 16px 32px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.booking-cta-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CTA RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .booking-cta-section {
+    min-height: 520px;
+
+    padding: 80px 25px;
+
+    background-position: center;
+  }
+
+  .booking-cta-content h2 {
+    font-size: 44px;
+
+    letter-spacing: -1px;
+  }
+
+  .booking-cta-content > p:not(.section-label) {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  color: #ffffff;
+}
+
+.about-hero-content {
+  width: 90%;
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.about-hero-content .section-label {
+  color: #dddddd;
+}
+
+.about-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 9vw, 120px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.about-hero-content h1 span {
+  font-style: italic;
+}
+
+.about-hero-content > p:last-child {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   ABOUT STORY
+========================================================= */
+
+.about-story {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 120px 40px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.about-story-image {
+  height: 650px;
+
+  overflow: hidden;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.about-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-story-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+
+  color: #111111;
+}
+
+.about-story-content h2 span {
+  font-style: italic;
+}
+
+.about-story-content p:not(.section-label) {
+  margin-top: 25px;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #666666;
+}
+
+
+/* =========================================================
+   PHOTOGRAPHY PHILOSOPHY
+========================================================= */
+
+.about-philosophy {
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  background: #f7f7f5;
+}
+
+.about-philosophy-content {
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.about-philosophy-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 8vw, 100px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+
+  color: #111111;
+}
+
+.about-philosophy-content h2 span {
+  font-style: italic;
+}
+
+.about-philosophy-content > p:last-child {
+  max-width: 600px;
+
+  margin: 40px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #666666;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.about-experience {
+  padding: 120px 40px;
+
+  background: #FAF9F6;
+}
+
+.about-experience-header {
+  max-width: 850px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.about-experience-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  color: #111111;
+}
+
+.about-experience-header h2 span {
+  font-style: italic;
+}
+
+.experience-grid {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #dddddd;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.experience-item {
+  min-height: 200px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-right: 1px solid #dddddd;
+}
+
+.experience-item:last-child {
+  border-right: none;
+}
+
+.experience-item strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 50px;
+
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.experience-item span {
+  margin-top: 10px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   ABOUT CTA
+========================================================= */
+
+.about-cta {
+  min-height: 550px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+
+  color: #ffffff;
+}
+
+.about-cta-content {
+  text-align: center;
+}
+
+.about-cta-content .section-label {
+  color: #dddddd;
+}
+
+.about-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.about-cta-content h2 span {
+  font-style: italic;
+}
+
+.about-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-cta-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ABOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-story {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 90px 25px;
+  }
+
+  .about-story-image {
+    height: 550px;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .experience-item:nth-child(1),
+  .experience-item:nth-child(2) {
+    border-bottom: 1px solid #dddddd;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .about-hero {
+    min-height: 60vh;
+  }
+
+  .about-hero-content h1 {
+    font-size: 64px;
+
+    letter-spacing: -2px;
+  }
+
+  .about-hero-content > p:last-child {
+    font-size: 14px;
+  }
+
+  .about-story {
+    padding: 75px 20px;
+  }
+
+  .about-story-image {
+    height: 450px;
+  }
+
+  .about-story-content h2 {
+    font-size: 38px;
+  }
+
+  .about-story-content p:not(.section-label) {
+    font-size: 14px;
+  }
+
+  .about-philosophy {
+    min-height: 550px;
+    background: #F3F1EC;
+    padding: 80px 25px;
+  }
+
+  .about-philosophy-content h2 {
+    font-size: 58px;
+
+    letter-spacing: -2px;
+  }
+
+  .about-experience {
+    padding: 80px 20px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-item {
+    min-height: 160px;
+  }
+
+  .experience-item strong {
+    font-size: 40px;
+  }
+
+  .experience-item span {
+    font-size: 9px;
+  }
+
+  .about-cta {
+    min-height: 500px;
+  }
+
+  .about-cta-content h2 {
+    font-size: 55px;
+  }
+}
+/* =========================================================
+   PORTFOLIO PAGE
+========================================================= */
+
+.portfolio-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   PORTFOLIO HEADER
+========================================================= */
+
+.portfolio-header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 30px 70px;
+  text-align: center;
+}
+
+.portfolio-header h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(58px, 8vw, 100px);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -2px;
+
+  color: #1A1A1A;
+}
+
+.portfolio-header h1 span {
+  font-style: italic;
+}
+
+.portfolio-header > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   PORTFOLIO FILTER
+========================================================= */
+
+.portfolio-filter-section {
+  padding: 0 30px 55px;
+}
+
+.portfolio-filters {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.portfolio-filter {
+  border: 1px solid #D8D5CE;
+
+  background: transparent;
+
+  color: #666666;
+
+  padding: 11px 20px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.active {
+  background: #1A1A1A;
+
+  border-color: #1A1A1A;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PORTFOLIO GALLERY
+========================================================= */
+
+.portfolio-gallery {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 120px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   PORTFOLIO CARD
+========================================================= */
+
+.portfolio-card {
+  position: relative;
+
+  width: 100%;
+  height: 520px;
+
+  overflow: hidden;
+
+  background: #e8e5de;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.8s ease;
+}
+
+
+/* =========================================================
+   PORTFOLIO OVERLAY
+========================================================= */
+
+.portfolio-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 30px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.05) 60%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  color: #ffffff;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.06);
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+.portfolio-card-overlay span:first-child {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #dddddd;
+}
+
+.portfolio-card-overlay h2 {
+  margin-top: 8px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.portfolio-card-arrow {
+  font-size: 25px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .portfolio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .portfolio-card {
+    height: 480px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .portfolio-header {
+    padding: 80px 20px 50px;
+  }
+
+  .portfolio-header h1 {
+    font-size: 58px;
+  }
+
+  .portfolio-filter-section {
+    padding: 0 20px 40px;
+  }
+
+  .portfolio-filters {
+    gap: 7px;
+  }
+
+  .portfolio-filter {
+    padding: 9px 14px;
+
+    font-size: 9px;
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+
+    padding: 0 15px 80px;
+
+    gap: 12px;
+  }
+
+  .portfolio-card {
+    height: 450px;
+  }
+
+  .portfolio-card-overlay {
+    opacity: 1;
+
+    padding: 22px;
+  }
+
+  .portfolio-card-overlay h2 {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+.services-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   SERVICES HERO
+========================================================= */
+
+.services-hero {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.services-hero-content {
+  max-width: 900px;
+
+  text-align: center;
+}
+
+.services-hero-content .section-label {
+  color: #dddddd;
+}
+
+.services-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.services-hero-content h1 span {
+  font-style: italic;
+}
+
+.services-hero-content > p:last-child {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   SERVICES INTRO
+========================================================= */
+
+.services-intro {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 120px 30px;
+
+  text-align: center;
+}
+
+.services-intro h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  color: #1A1A1A;
+}
+
+.services-intro h2 span {
+  font-style: italic;
+}
+
+.services-intro > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   SERVICE DETAILS
+========================================================= */
+
+.services-main {
+  width: 100%;
+}
+
+.service-detail {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 40px 120px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.service-detail.reverse {
+  direction: rtl;
+}
+
+.service-detail.reverse .service-detail-content,
+.service-detail.reverse .service-detail-image {
+  direction: ltr;
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-detail-image {
+  height: 650px;
+
+  overflow: hidden;
+
+  background: #e8e5de;
+}
+
+.service-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.service-detail-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-detail-content {
+  max-width: 550px;
+}
+
+.service-detail-number {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  color: #888888;
+}
+
+.service-detail-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -1px;
+
+  color: #1A1A1A;
+}
+
+.service-detail-content h2 span {
+  font-style: italic;
+}
+
+.service-detail-content > p:not(.section-label) {
+  margin-top: 30px;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.service-detail-content ul {
+  margin: 30px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+  border-top: 1px solid #DEDCD6;
+}
+
+.service-detail-content li {
+  padding: 12px 0;
+
+  border-bottom: 1px solid #DEDCD6;
+
+  font-size: 12px;
+
+  color: #555555;
+}
+
+.service-detail-content li::before {
+  content: "—";
+
+  margin-right: 10px;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   SERVICE BUTTON
+========================================================= */
+
+.service-detail-button {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  color: #1A1A1A;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-detail-button:hover {
+  opacity: 0.6;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   SERVICES PROCESS
+========================================================= */
+
+.services-process {
+  padding: 120px 40px;
+
+  background: #F3F1EC;
+}
+
+.services-process-header {
+  max-width: 850px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.services-process-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #1A1A1A;
+}
+
+.services-process-header h2 span {
+  font-style: italic;
+}
+
+.process-grid {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #D8D5CE;
+
+  border-bottom: 1px solid #D8D5CE;
+}
+
+.process-item {
+  min-height: 240px;
+
+  padding: 35px 30px;
+
+  border-right: 1px solid #D8D5CE;
+}
+
+.process-item:last-child {
+  border-right: none;
+}
+
+.process-item > span {
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #888888;
+}
+
+.process-item h3 {
+  margin-top: 35px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  color: #1A1A1A;
+}
+
+.process-item p {
+  margin-top: 12px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   SERVICES CTA
+========================================================= */
+
+.services-cta {
+  min-height: 550px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.services-cta-content {
+  text-align: center;
+}
+
+.services-cta-content .section-label {
+  color: #dddddd;
+}
+
+.services-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.services-cta-content h2 span {
+  font-style: italic;
+}
+
+.services-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #ffffff;
+
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.services-cta-button:hover {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SERVICES RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .service-detail,
+  .service-detail.reverse {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 0 25px 90px;
+
+    direction: ltr;
+  }
+
+  .service-detail-image {
+    height: 550px;
+  }
+
+  .service-detail-content {
+    max-width: 100%;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .process-item:nth-child(1),
+  .process-item:nth-child(2) {
+    border-bottom: 1px solid #D8D5CE;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .services-hero {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+  }
+
+  .services-hero-content h1 {
+    font-size: 62px;
+  }
+
+  .services-hero-content > p:last-child {
+    font-size: 14px;
+  }
+
+  .services-intro {
+    padding: 80px 20px;
+  }
+
+  .services-intro h2 {
+    font-size: 42px;
+  }
+
+  .services-intro > p:last-child {
+    font-size: 14px;
+  }
+
+  .service-detail {
+    padding: 0 20px 75px;
+  }
+
+  .service-detail-image {
+    height: 450px;
+  }
+
+  .service-detail-content h2 {
+    font-size: 52px;
+  }
+
+  .service-detail-content > p:not(.section-label) {
+    font-size: 14px;
+  }
+
+  .services-process {
+    padding: 80px 20px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-item {
+    min-height: auto;
+
+    border-right: none;
+
+    border-bottom: 1px solid #D8D5CE;
+  }
+
+  .process-item:last-child {
+    border-bottom: none;
+  }
+
+  .process-item:nth-child(1),
+  .process-item:nth-child(2) {
+    border-bottom: 1px solid #D8D5CE;
+  }
+
+  .services-cta {
+    min-height: 500px;
+  }
+
+  .services-cta-content h2 {
+    font-size: 58px;
+  }
+}
+
+/* =========================================================
+   PRICING PAGE
+========================================================= */
+
+.pricing-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   PRICING HERO
+========================================================= */
+
+.pricing-hero {
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.pricing-hero-content {
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.pricing-hero-content .section-label {
+  color: #dddddd;
+}
+
+.pricing-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.pricing-hero-content h1 span {
+  font-style: italic;
+}
+
+.pricing-hero-content > p:last-child {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   PRICING INTRO
+========================================================= */
+
+.pricing-intro {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 110px 30px 80px;
+
+  text-align: center;
+}
+
+.pricing-intro h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #1A1A1A;
+}
+
+.pricing-intro h2 span {
+  font-style: italic;
+}
+
+.pricing-intro > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   PRICING PACKAGES
+========================================================= */
+
+.pricing-packages {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 120px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PRICING CARD
+========================================================= */
+
+.pricing-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 45px 35px;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+}
+
+.pricing-card-popular {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  border-color: #1A1A1A;
+}
+
+.pricing-popular {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 7px 14px;
+
+  background: #FAF9F6;
+
+  border: 1px solid #1A1A1A;
+
+  color: #1A1A1A;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.pricing-number {
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #888888;
+}
+
+.pricing-card-popular .pricing-number {
+  color: #aaaaaa;
+}
+
+.pricing-card-top h2 {
+  margin: 30px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #1A1A1A;
+}
+
+.pricing-card-popular .pricing-card-top h2 {
+  color: #ffffff;
+}
+
+.pricing-card-top p {
+  min-height: 75px;
+
+  margin-top: 20px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #6B6B6B;
+}
+
+.pricing-card-popular .pricing-card-top p {
+  color: #bdbdbd;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.pricing-price {
+  margin-top: 40px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid #DEDCD6;
+
+  border-bottom: 1px solid #DEDCD6;
+}
+
+.pricing-card-popular .pricing-price {
+  border-color: #444444;
+}
+
+.pricing-price span {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #888888;
+}
+
+.pricing-price strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  color: #1A1A1A;
+}
+
+.pricing-card-popular .pricing-price strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.pricing-features {
+  padding: 25px 0;
+
+  flex: 1;
+}
+
+.pricing-feature {
+  padding: 9px 0;
+
+  font-size: 11px;
+
+  color: #555555;
+}
+
+.pricing-feature span {
+  margin-right: 10px;
+
+  color: #888888;
+}
+
+.pricing-card-popular .pricing-feature {
+  color: #cccccc;
+}
+
+.pricing-card-popular .pricing-feature span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PACKAGE BUTTON
+========================================================= */
+
+.pricing-button {
+  display: block;
+
+  padding: 15px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.pricing-button:hover {
+  background: #ffffff;
+
+  color: #1A1A1A;
+}
+
+.pricing-card-popular .pricing-button {
+  background: #ffffff;
+
+  color: #1A1A1A;
+}
+
+.pricing-card-popular .pricing-button:hover {
+  background: #F3F1EC;
+}
+
+
+/* =========================================================
+   CUSTOM PACKAGE
+========================================================= */
+
+.custom-package {
+  padding: 120px 30px;
+
+  background: #F3F1EC;
+
+  text-align: center;
+}
+
+.custom-package-content {
+  max-width: 750px;
+
+  margin: 0 auto;
+}
+
+.custom-package-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(50px, 6vw, 80px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.custom-package-content h2 span {
+  font-style: italic;
+}
+
+.custom-package-content > p:not(.section-label) {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: #6B6B6B;
+}
+
+.custom-package-button {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid #1A1A1A;
+
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.pricing-faq {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 120px 30px;
+}
+
+.pricing-faq-header {
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+.pricing-faq-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #1A1A1A;
+}
+
+.pricing-faq-header h2 span {
+  font-style: italic;
+}
+
+.faq-list {
+  border-top: 1px solid #DEDCD6;
+}
+
+.faq-item {
+  padding: 28px 10px;
+
+  border-bottom: 1px solid #DEDCD6;
+}
+
+.faq-item h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  color: #1A1A1A;
+}
+
+.faq-item p {
+  max-width: 700px;
+
+  margin: 10px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   PRICING CTA
+========================================================= */
+
+.pricing-cta {
+  min-height: 550px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.62)
+    ),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+
+  text-align: center;
+}
+
+.pricing-cta-content .section-label {
+  color: #dddddd;
+}
+
+.pricing-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.pricing-cta-content h2 span {
+  font-style: italic;
+}
+
+.pricing-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #ffffff;
+
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pricing-cta-button:hover {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PRICING RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .pricing-packages {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .pricing-card-top p {
+    min-height: auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .pricing-hero {
+    min-height: 55vh;
+
+    padding: 80px 20px;
+  }
+
+  .pricing-hero-content h1 {
+    font-size: 62px;
+  }
+
+  .pricing-intro {
+    padding: 80px 20px 60px;
+  }
+
+  .pricing-intro h2 {
+    font-size: 43px;
+  }
+
+  .pricing-packages {
+    padding: 0 20px 80px;
+
+    gap: 30px;
+  }
+
+  .pricing-card {
+    padding: 40px 25px;
+  }
+
+  .custom-package {
+    padding: 80px 20px;
+  }
+
+  .pricing-faq {
+    padding: 80px 20px;
+  }
+
+  .pricing-cta {
+    min-height: 500px;
+  }
+
+  .pricing-cta-content h2 {
+    font-size: 58px;
+  }
+}
+
+/* =========================================================
+   TESTIMONIALS PAGE
+========================================================= */
+
+.testimonials-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   TESTIMONIAL HERO
+========================================================= */
+
+.testimonials-hero {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.testimonials-hero-content {
+  max-width: 900px;
+
+  text-align: center;
+}
+
+.testimonials-hero-content .section-label {
+  color: #dddddd;
+}
+
+.testimonials-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(58px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.testimonials-hero-content h1 span {
+  font-style: italic;
+}
+
+.testimonials-hero-content > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.testimonials-intro {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 120px 30px 80px;
+
+  text-align: center;
+}
+
+.testimonials-intro h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 6vw, 75px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.testimonials-intro h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
+
+.testimonials-grid {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 120px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CARD
+========================================================= */
+
+.testimonial-card {
+  min-height: 430px;
+
+  padding: 45px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+
+  background: #EFEEE9;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.testimonial-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.testimonial-card-number {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #888888;
+}
+
+.testimonial-quote-mark {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 70px;
+
+  line-height: 0.6;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   CARD QUOTE
+========================================================= */
+
+.testimonial-card blockquote {
+  margin: 40px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(27px, 3vw, 38px);
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   CARD AUTHOR
+========================================================= */
+
+.testimonial-card-author {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.testimonial-card-author strong {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #1A1A1A;
+}
+
+.testimonial-card-author span {
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #777777;
+}
+
+.testimonial-card-author small {
+  margin-top: 3px;
+
+  font-size: 9px;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   FEATURED TESTIMONIAL
+========================================================= */
+
+.featured-testimonial {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 120px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 600px;
+}
+
+.featured-testimonial-image {
+  overflow: hidden;
+}
+
+.featured-testimonial-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.featured-testimonial:hover .featured-testimonial-image img {
+  transform: scale(1.04);
+}
+
+.featured-testimonial-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 70px;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+}
+
+.featured-testimonial-content .testimonial-quote-mark {
+  color: #777777;
+}
+
+.featured-testimonial-content blockquote {
+  margin: 25px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.featured-testimonial-author {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-top: 45px;
+}
+
+.featured-testimonial-author strong {
+  font-size: 11px;
+
+  color: #ffffff;
+}
+
+.featured-testimonial-author span {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CTA
+========================================================= */
+
+.testimonials-cta {
+  min-height: 550px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.62)
+    ),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.testimonials-cta-content .section-label {
+  color: #dddddd;
+}
+
+.testimonials-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.testimonials-cta-content h2 span {
+  font-style: italic;
+}
+
+.testimonials-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #ffffff;
+
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.testimonials-cta-button:hover {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+  }
+
+  .featured-testimonial {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+  }
+
+  .featured-testimonial-image {
+    height: 500px;
+  }
+
+  .featured-testimonial-content {
+    min-height: 500px;
+
+    padding: 55px 40px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .testimonials-hero {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+  }
+
+  .testimonials-hero-content h1 {
+    font-size: 60px;
+  }
+
+  .testimonials-hero-content > p:last-child {
+    font-size: 14px;
+  }
+
+  .testimonials-intro {
+    padding: 80px 20px 60px;
+  }
+
+  .testimonials-intro h2 {
+    font-size: 50px;
+  }
+
+  .testimonials-grid {
+    padding: 0 15px 80px;
+
+    gap: 12px;
+  }
+
+  .testimonial-card {
+    min-height: 400px;
+
+    padding: 30px 25px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 30px;
+
+    margin: 30px 0;
+  }
+
+  .featured-testimonial {
+    padding: 0 15px 80px;
+  }
+
+  .featured-testimonial-image {
+    height: 400px;
+  }
+
+  .featured-testimonial-content {
+    min-height: 430px;
+
+    padding: 45px 25px;
+  }
+
+  .featured-testimonial-content blockquote {
+    font-size: 42px;
+  }
+
+  .testimonials-cta {
+    min-height: 500px;
+  }
+
+  .testimonials-cta-content h2 {
+    font-size: 58px;
+  }
+}
+/* =========================================================
+   BOOKING PAGE
+========================================================= */
+
+.booking-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   BOOKING HERO
+========================================================= */
+
+.booking-page-hero {
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.booking-page-hero-content {
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.booking-page-hero-content .section-label {
+  color: #dddddd;
+}
+
+.booking-page-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.booking-page-hero-content h1 span {
+  font-style: italic;
+}
+
+.booking-page-hero-content > p:last-child {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   BOOKING MAIN
+========================================================= */
+
+.booking-main {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 120px 40px;
+
+  display: grid;
+
+  grid-template-columns: 1.5fr 0.8fr;
+
+  gap: 100px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.booking-form-header {
+  margin-bottom: 55px;
+}
+
+.booking-form-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  color: #1A1A1A;
+}
+
+.booking-form-header h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.booking-form {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px 20px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  margin-bottom: 9px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #555555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 14px 0;
+
+  border: none;
+
+  border-bottom: 1px solid #CFCBC3;
+
+  background: transparent;
+
+  outline: none;
+
+  border-radius: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  color: #1A1A1A;
+
+  transition:
+    border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1A1A1A;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999999;
+}
+
+.form-group textarea {
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.booking-submit-wrapper {
+  grid-column: span 2;
+
+  margin-top: 20px;
+}
+
+.booking-submit {
+  border: none;
+
+  padding: 16px 30px;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.booking-submit:hover {
+  background: #333333;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOOKING INFO
+========================================================= */
+
+.booking-info {
+  position: sticky;
+
+  top: 120px;
+
+  padding: 40px;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+}
+
+.booking-info h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.booking-info h2 span {
+  font-style: italic;
+}
+
+.booking-info > p:not(.section-label) {
+  margin-top: 25px;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.booking-contact-details {
+  margin-top: 45px;
+
+  border-top: 1px solid #D8D5CE;
+}
+
+.booking-contact-details > div {
+  padding: 18px 0;
+
+  border-bottom: 1px solid #D8D5CE;
+}
+
+.booking-contact-details span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+.booking-contact-details a,
+.booking-contact-details p {
+  margin: 0;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.booking-bottom-cta {
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.62)
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.booking-bottom-cta .section-label {
+  color: #dddddd;
+}
+
+.booking-bottom-cta h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.booking-bottom-cta h2 span {
+  font-style: italic;
+}
+
+.booking-email-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #ffffff;
+
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.booking-email-button:hover {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOOKING RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .booking-main {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    padding: 90px 30px;
+  }
+
+  .booking-info {
+    position: static;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .booking-page-hero {
+    min-height: 55vh;
+
+    padding: 80px 20px;
+  }
+
+  .booking-page-hero-content h1 {
+    font-size: 62px;
+  }
+
+  .booking-page-hero-content > p:last-child {
+    font-size: 14px;
+  }
+
+  .booking-main {
+    padding: 75px 20px;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .form-group-full,
+  .booking-submit-wrapper {
+    grid-column: span 1;
+  }
+
+  .booking-form-header {
+    margin-bottom: 40px;
+  }
+
+  .booking-form-header h2 {
+    font-size: 45px;
+  }
+
+  .booking-info {
+    padding: 30px 25px;
+  }
+
+  .booking-info h2 {
+    font-size: 45px;
+  }
+
+  .booking-bottom-cta {
+    min-height: 450px;
+  }
+
+  .booking-bottom-cta h2 {
+    font-size: 58px;
+  }
+}
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-page {
+  width: 100%;
+  background: #FAF9F6;
+}
+
+
+/* =========================================================
+   CONTACT HERO
+========================================================= */
+
+.contact-hero {
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-hero-content {
+  max-width: 850px;
+  text-align: center;
+}
+
+.contact-hero-content .section-label {
+  color: #dddddd;
+}
+
+.contact-hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.contact-hero-content h1 span {
+  font-style: italic;
+}
+
+.contact-hero-content > p:last-child {
+  max-width: 600px;
+
+  margin: 30px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+
+/* =========================================================
+   CONTACT MAIN
+========================================================= */
+
+.contact-main {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 120px 40px;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 100px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details h2,
+.contact-form-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.contact-details h2 span,
+.contact-form-header h2 span {
+  font-style: italic;
+}
+
+.contact-description {
+  max-width: 430px;
+
+  margin-top: 30px;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+
+  color: #6B6B6B;
+}
+
+
+/* =========================================================
+   CONTACT INFO
+========================================================= */
+
+.contact-info-list {
+  margin-top: 45px;
+
+  border-top: 1px solid #DEDCD6;
+}
+
+.contact-info-item {
+  padding: 18px 0;
+
+  border-bottom: 1px solid #DEDCD6;
+}
+
+.contact-info-item > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+.contact-info-item a,
+.contact-info-item p {
+  margin: 0;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.contact-socials {
+  margin-top: 45px;
+}
+
+.contact-socials > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #888888;
+}
+
+.contact-socials div {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.contact-socials a {
+  color: #1A1A1A;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  border-bottom: 1px solid #1A1A1A;
+
+  padding-bottom: 3px;
+
+  transition: opacity 0.3s ease;
+}
+
+.contact-socials a:hover {
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form-wrapper {
+  padding: 45px;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+}
+
+.contact-form-header {
+  margin-bottom: 45px;
+}
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.contact-form-group {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.contact-form-group label {
+  margin-bottom: 9px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #555555;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+  width: 100%;
+
+  padding: 14px 0;
+
+  border: none;
+
+  border-bottom: 1px solid #CFCBC3;
+
+  background: transparent;
+
+  outline: none;
+
+  border-radius: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  color: #1A1A1A;
+
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+  border-color: #1A1A1A;
+}
+
+.contact-form-group input::placeholder,
+.contact-form-group textarea::placeholder {
+  color: #999999;
+}
+
+.contact-form-group textarea {
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT SUBMIT
+========================================================= */
+
+.contact-submit {
+  align-self: flex-start;
+
+  margin-top: 10px;
+
+  padding: 16px 30px;
+
+  border: none;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-submit:hover {
+  background: #333333;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.contact-location {
+  min-height: 480px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1524666041070-9e7e7e3e8f5c?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+
+  color: #ffffff;
+}
+
+.contact-location-content {
+  max-width: 700px;
+}
+
+.contact-location-content .section-label {
+  color: #dddddd;
+}
+
+.contact-location-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(50px, 6vw, 75px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.contact-location-content h2 span {
+  font-style: italic;
+}
+
+.contact-location-content > p:not(.section-label) {
+  max-width: 550px;
+
+  margin: 25px auto 0;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #dddddd;
+}
+
+.contact-map-button {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid #ffffff;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  transition: opacity 0.3s ease;
+}
+
+.contact-map-button:hover {
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   CONTACT CTA
+========================================================= */
+
+.contact-cta {
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 30px;
+
+  text-align: center;
+
+  background: #F3F1EC;
+}
+
+.contact-cta-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.contact-cta-content h2 span {
+  font-style: italic;
+}
+
+.contact-cta-button {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-cta-button:hover {
+  background: #333333;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTACT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .contact-main {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    padding: 90px 30px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .contact-hero {
+    min-height: 55vh;
+
+    padding: 80px 20px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 62px;
+  }
+
+  .contact-hero-content > p:last-child {
+    font-size: 14px;
+  }
+
+  .contact-main {
+    padding: 75px 20px;
+  }
+
+  .contact-form-wrapper {
+    padding: 30px 25px;
+  }
+
+  .contact-details h2,
+  .contact-form-header h2 {
+    font-size: 46px;
+  }
+
+  .contact-location {
+    min-height: 450px;
+  }
+
+  .contact-location-content h2 {
+    font-size: 55px;
+  }
+
+  .contact-cta {
+    min-height: 450px;
+  }
+
+  .contact-cta-content h2 {
+    font-size: 58px;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #1A1A1A;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footer-main {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 80px 40px;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+
+  gap: 50px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+  padding-right: 50px;
+}
+
+.footer-logo {
+  display: inline-block;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.footer-brand p {
+  margin-top: 20px;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.footer-column h3 {
+  margin: 0 0 15px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #777777;
+}
+
+.footer-column a,
+.footer-column p {
+  margin: 0;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #cccccc;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER CONTACT
+========================================================= */
+
+.footer-contact a {
+  color: #cccccc;
+}
+
+.footer-contact p {
+  color: #999999;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 25px 40px;
+
+  border-top: 1px solid #333333;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  font-size: 9px;
+
+  color: #777777;
+}
+
+.footer-socials {
+  display: flex;
+
+  gap: 20px;
+}
+
+.footer-socials a {
+  font-size: 9px;
+
+  color: #999999;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 70px 30px;
+
+    gap: 45px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+
+    padding-right: 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 60px 20px;
+
+    gap: 40px 25px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .footer-logo {
+    font-size: 34px;
+  }
+
+  .footer-bottom {
+    padding: 22px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .footer-socials {
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+.admin-login-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background: #FAF9F6;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 55px 45px;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+}
+
+.admin-login-header {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.admin-login-header h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 65px;
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #1A1A1A;
+}
+
+.admin-login-header h1 span {
+  font-style: italic;
+}
+
+.admin-login-header p:last-child {
+  margin-top: 20px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #777777;
+}
+
+.admin-login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.admin-form-group {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.admin-form-group label {
+  margin-bottom: 9px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #555555;
+}
+
+.admin-form-group input {
+  width: 100%;
+
+  padding: 14px 0;
+
+  border: none;
+
+  border-bottom: 1px solid #CFCBC3;
+
+  background: transparent;
+
+  outline: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  color: #1A1A1A;
+}
+
+.admin-form-group input:focus {
+  border-color: #1A1A1A;
+}
+
+.admin-form-group input::placeholder {
+  color: #999999;
+}
+
+.admin-login-error {
+  padding: 12px 15px;
+
+  border: 1px solid #D8BABA;
+
+  background: #F8EEEE;
+
+  color: #9A4A4A;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.admin-login-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.admin-login-button:hover:not(:disabled) {
+  background: #333333;
+
+  transform: translateY(-2px);
+}
+
+.admin-login-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.admin-login-footer {
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+.admin-login-footer a {
+  color: #777777;
+
+  font-size: 10px;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.admin-login-footer a:hover {
+  color: #1A1A1A;
+}
+
+
+@media (max-width: 500px) {
+
+  .admin-login-card {
+    padding: 45px 25px;
+  }
+
+  .admin-login-header h1 {
+    font-size: 55px;
+  }
+}
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-dashboard {
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #FAF9F6;
+
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+  width: 240px;
+
+  min-height: 100vh;
+
+  position: sticky;
+
+  top: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 40px 25px;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+}
+
+.admin-sidebar-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.admin-sidebar-brand span {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.admin-sidebar-brand strong {
+  margin-top: 5px;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+
+  color: #999999;
+}
+
+.admin-sidebar-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 70px;
+}
+
+.admin-sidebar-nav a {
+  padding: 12px 10px;
+
+  color: #999999;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.admin-sidebar-nav a:hover,
+.admin-sidebar-nav a.active {
+  color: #ffffff;
+
+  background: #292929;
+}
+
+.admin-logout-button {
+  margin-top: auto;
+
+  padding: 13px;
+
+  border: 1px solid #444444;
+
+  background: transparent;
+
+  color: #999999;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.admin-logout-button:hover {
+  color: #ffffff;
+
+  border-color: #777777;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+========================================================= */
+
+.admin-dashboard-content {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 60px 55px;
+}
+
+.admin-dashboard-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 50px;
+}
+
+.admin-dashboard-header h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.admin-dashboard-header h1 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.admin-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 70px;
+}
+
+.admin-stat-card {
+  padding: 25px;
+
+  background: #F3F1EC;
+
+  border: 1px solid #DEDCD6;
+}
+
+.admin-stat-card span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #777777;
+}
+
+.admin-stat-card strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 45px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BOOKINGS SECTION
+========================================================= */
+
+.admin-section-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.admin-section-header h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.admin-section-header h2 span {
+  font-style: italic;
+}
+
+.admin-refresh-button {
+  padding: 11px 18px;
+
+  border: 1px solid #1A1A1A;
+
+  background: transparent;
+
+  color: #1A1A1A;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+}
+
+.admin-refresh-button:hover {
+  background: #1A1A1A;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.admin-bookings-table-wrapper {
+  overflow-x: auto;
+
+  border: 1px solid #DEDCD6;
+}
+
+.admin-bookings-table {
+  width: 100%;
+
+  min-width: 800px;
+
+  border-collapse: collapse;
+
+  background: #F3F1EC;
+}
+
+.admin-bookings-table th {
+  padding: 16px;
+
+  border-bottom: 1px solid #DEDCD6;
+
+  text-align: left;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #777777;
+}
+
+.admin-bookings-table td {
+  padding: 18px 16px;
+
+  border-bottom: 1px solid #DEDCD6;
+
+  font-size: 11px;
+
+  color: #555555;
+}
+
+.admin-bookings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-client {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.admin-client strong {
+  color: #1A1A1A;
+
+  font-size: 11px;
+}
+
+.admin-client span {
+  font-size: 9px;
+
+  color: #888888;
+}
+
+
+/* =========================================================
+   BOOKING STATUS
+========================================================= */
+
+.booking-status {
+  display: inline-block;
+
+  padding: 6px 9px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+}
+
+.status-pending {
+  background: #EEE8D7;
+
+  color: #806C35;
+}
+
+.status-confirmed {
+  background: #E2ECE3;
+
+  color: #4C7050;
+}
+
+.status-completed {
+  background: #E3E7EC;
+
+  color: #536170;
+}
+
+.status-cancelled {
+  background: #F0E1E1;
+
+  color: #8B5555;
+}
+
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.admin-state {
+  padding: 50px;
+
+  border: 1px solid #DEDCD6;
+
+  background: #F3F1EC;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: #777777;
+}
+
+.admin-state-error {
+  color: #9A4A4A;
+
+  background: #F8EEEE;
+
+  border-color: #D8BABA;
+}
+
+.admin-mobile-logout {
+  display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-sidebar {
+    width: 210px;
+  }
+
+  .admin-dashboard-content {
+    padding: 50px 35px;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 750px) {
+
+  .admin-dashboard {
+    display: block;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+
+    min-height: auto;
+
+    position: static;
+
+    padding: 20px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .admin-sidebar-nav,
+  .admin-logout-button {
+    display: none;
+  }
+
+  .admin-mobile-logout {
+    display: block;
+
+    padding: 10px 15px;
+
+    border: 1px solid #1A1A1A;
+
+    background: transparent;
+
+    font-size: 9px;
+
+    cursor: pointer;
+  }
+
+  .admin-dashboard-content {
+    padding: 40px 20px;
+  }
+
+  .admin-dashboard-header {
+    align-items: flex-start;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr 1fr;
+
+    margin-bottom: 50px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-dashboard-header h1 {
+    font-size: 45px;
+  }
+
+  .admin-section-header h2 {
+    font-size: 40px;
+  }
+}
+
+/* =========================================================
+   ADMIN BOOKING ACTIONS
+========================================================= */
+
+.admin-status-select {
+  padding: 7px 10px;
+
+  border: 1px solid #CFCBC3;
+
+  background: #FAF9F6;
+
+  color: #1A1A1A;
+
+  outline: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.admin-status-select:focus {
+  border-color: #1A1A1A;
+}
+
+.admin-delete-button {
+  padding: 7px 10px;
+
+  border: 1px solid #C8AAAA;
+
+  background: transparent;
+
+  color: #9A5555;
+
+  font-size: 8px;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.admin-delete-button:hover {
+  background: #9A5555;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   ADMIN PORTFOLIO
+========================================================= */
+
+.admin-portfolio-page {
+  min-height: 100vh;
+  padding: 60px 6%;
+  background: #FAF9F6;
+  color: #1A1A1A;
+}
+
+.admin-portfolio-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.admin-portfolio-header h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 6vw, 75px);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.admin-portfolio-header h1 span {
+  font-style: italic;
+}
+
+.admin-portfolio-header > div > p:last-child {
+  max-width: 500px;
+  margin-top: 20px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.admin-back-button {
+  padding: 11px 18px;
+  border: 1px solid #1A1A1A;
+  color: #1A1A1A;
+  text-decoration: none;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+.admin-back-button:hover {
+  background: #1A1A1A;
+  color: #ffffff;
+}
+
+.admin-portfolio-content {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.admin-portfolio-form-wrapper {
+  padding: 30px;
+  background: #F3F1EC;
+  border: 1px solid #DEDCD6;
+}
+
+.admin-portfolio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.admin-portfolio-form .admin-form-group input,
+.admin-portfolio-form .admin-form-group select,
+.admin-portfolio-form .admin-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #CFCBC3;
+  background: #FAF9F6;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: #1A1A1A;
+}
+
+.admin-portfolio-form .admin-form-group input:focus,
+.admin-portfolio-form .admin-form-group select:focus,
+.admin-portfolio-form .admin-form-group textarea:focus {
+  border-color: #1A1A1A;
+}
+
+.admin-featured-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  color: #555555;
+  cursor: pointer;
+}
+
+.admin-featured-checkbox input {
+  accent-color: #1A1A1A;
+}
+
+.admin-success-message {
+  padding: 12px 15px;
+  background: #E8F0E8;
+  border: 1px solid #C5D6C5;
+  color: #527052;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.admin-portfolio-list {
+  min-width: 0;
+}
+
+.admin-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.admin-portfolio-card {
+  overflow: hidden;
+  background: #F3F1EC;
+  border: 1px solid #DEDCD6;
+}
+
+.admin-portfolio-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.admin-portfolio-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.admin-featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 7px 10px;
+  background: #1A1A1A;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+}
+
+.admin-portfolio-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px;
+}
+
+.admin-portfolio-card-content p {
+  margin: 0 0 5px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #888888;
+}
+
+.admin-portfolio-card-content h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@media (max-width: 1000px) {
+  .admin-portfolio-content {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-portfolio-form-wrapper {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-portfolio-page {
+    padding: 40px 20px;
+  }
+
+  .admin-portfolio-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-portfolio-image {
+    height: 320px;
+  }
+}
+/* =========================================================
+   PORTFOLIO PAGE
+========================================================= */
+
+.portfolio-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #FAF9F6;
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+
+.portfolio-page-hero {
+  position: relative;
+
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 8%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.38) 45%,
+      rgba(0, 0, 0, 0.12) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
+    center center / cover no-repeat;
+}
+
+.portfolio-page-hero-content {
+  width: 100%;
+  max-width: 850px;
+}
+
+.portfolio-page-hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 110px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  color: white;
+}
+
+.portfolio-page-hero h1 span {
+  font-style: italic;
+}
+
+.portfolio-page-hero-content > p:last-child {
+  max-width: 520px;
+
+  margin-top: 30px;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.portfolio-filter-section {
+  width: 100%;
+
+  padding: 30px 8%;
+
+  border-top: 1px solid #DEDCD6;
+  border-bottom: 1px solid #DEDCD6;
+
+  background: #FAF9F6;
+
+  box-sizing: border-box;
+}
+
+.portfolio-filters {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.portfolio-filters button {
+  padding: 10px 18px;
+
+  border: 1px solid #CFCBC3;
+
+  background: transparent;
+
+  color: #666666;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.portfolio-filters button:hover,
+.portfolio-filters button.active {
+  border-color: #1A1A1A;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.portfolio-gallery {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 80px 8%;
+
+  background: #FAF9F6;
+}
+
+/* =========================================================
+   LOADING / ERROR / EMPTY STATE
+========================================================= */
+
+.portfolio-state {
+  width: 100%;
+
+  min-height: 250px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  border: 1px solid #DEDCD6;
+
+  background: #F3F1EC;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: #777777;
+}
+
+.portfolio-error {
+  color: #9A4A4A;
+
+  border-color: #D8BABA;
+
+  background: #F8EEEE;
+}
+
+
+/* =========================================================
+   LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+  }
+
+ .portfolio-page-hero {
+  position: relative;
+
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 8%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.38) 45%,
+      rgba(0, 0, 0, 0.12) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
+    center center / cover no-repeat;
+}
+
+  .portfolio-gallery {
+    padding: 60px 6%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .portfolio-page-hero {
+    min-height: 50vh;
+
+    padding: 70px 20px;
+  }
+
+  .portfolio-page-hero h1 {
+    font-size: 60px;
+  }
+
+  .portfolio-filter-section {
+    padding: 20px;
+  }
+
+  .portfolio-filters {
+    justify-content: flex-start;
+  }
+
+  .portfolio-gallery {
+    padding: 40px 20px;
+  }
+
+}
+
+/* =========================================================
+   PORTFOLIO GRID - FINAL FIX
+========================================================= */
+
+.portfolio-gallery {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 8%;
+}
+
+.portfolio-grid {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.portfolio-card {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: #F3F1EC;
+  border: 1px solid #DEDCD6;
+}
+
+.portfolio-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+}
+
+.portfolio-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* ==========================================
+   CARD TEXT
+========================================== */
+
+.portfolio-card-info {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 24px;
+}
+
+.portfolio-card-info p {
+  margin: 0 0 10px;
+
+  font-size: 9px;
+  letter-spacing: 1.5px;
+
+  color: #888888;
+
+  text-transform: uppercase;
+}
+
+.portfolio-card-info h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 36px;
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  color: #1A1A1A;
+
+  /* IMPORTANT */
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+.portfolio-card-info span {
+  display: block;
+
+  margin-top: 16px;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #777777;
+
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(2, minmax(280px, 1fr));
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .portfolio-gallery {
+    padding: 50px 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card-info h2 {
+    font-size: 34px;
+  }
+}
+
+/* =========================================================
+   ADMIN IMAGE UPLOAD
+========================================================= */
+
+.admin-image-help {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  color: #888888;
+}
+
+.admin-image-preview {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px;
+
+  border: 1px solid #DEDCD6;
+
+  background: #FAF9F6;
+}
+
+.admin-image-preview img {
+  width: 80px;
+
+  height: 80px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.admin-image-preview div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.admin-image-preview strong {
+  font-size: 10px;
+
+  color: #1A1A1A;
+}
+
+.admin-image-preview span {
+  max-width: 220px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 9px;
+
+  color: #888888;
+}
+
+.admin-portfolio-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-edit-button {
+  padding: 7px 10px;
+
+  border: 1px solid #1A1A1A;
+
+  background: transparent;
+
+  color: #1A1A1A;
+
+  font-size: 8px;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.admin-edit-button:hover {
+  background: #1A1A1A;
+  color: #ffffff;
+}
+
+.admin-cancel-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #CFCBC3;
+
+  background: transparent;
+
+  color: #555555;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+}
+
+.admin-cancel-button:hover {
+  border-color: #1A1A1A;
+  color: #1A1A1A;
+}
+
+/* =========================================================
+   ADMIN BOOKINGS
+========================================================= */
+
+.admin-bookings-page {
+  min-height: 100vh;
+
+  padding: 60px 6%;
+
+  background: #FAF9F6;
+
+  color: #1A1A1A;
+}
+
+.admin-bookings-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 50px;
+}
+
+.admin-bookings-header h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(50px, 6vw, 75px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+}
+
+.admin-bookings-header h1 span {
+  font-style: italic;
+}
+
+.admin-bookings-header > div:first-child > p:last-child {
+  max-width: 500px;
+
+  margin-top: 20px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.admin-bookings-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.admin-bookings-error {
+  margin-bottom: 25px;
+
+  padding: 14px 18px;
+
+  border: 1px solid #D8BABA;
+
+  background: #F8EEEE;
+
+  color: #9A4A4A;
+
+  font-size: 10px;
+}
+
+.admin-bookings-content {
+  width: 100%;
+}
+
+.admin-bookings-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.admin-booking-card {
+  padding: 30px;
+
+  border: 1px solid #DEDCD6;
+
+  background: #F3F1EC;
+}
+
+.admin-booking-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #DEDCD6;
+}
+
+.booking-card-label {
+  margin: 0 0 8px;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  color: #888;
+}
+
+.admin-booking-card h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 32px;
+
+  font-weight: 400;
+}
+
+.booking-status {
+  padding: 8px 12px;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.booking-status.pending {
+  background: #EFE9D8;
+
+  color: #856F3D;
+}
+
+.booking-status.confirmed {
+  background: #E4EEE5;
+
+  color: #55735A;
+}
+
+.booking-status.rejected {
+  background: #F2E2E2;
+
+  color: #925B5B;
+}
+
+.booking-status.cancelled {
+  background: #E8E8E8;
+
+  color: #666;
+}
+
+.admin-booking-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  padding: 30px 0;
+}
+
+.admin-booking-details > div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.admin-booking-details span,
+.admin-booking-message > span {
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: #999;
+}
+
+.admin-booking-details strong,
+.admin-booking-details a {
+  color: #333;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  text-decoration: none;
+
+  overflow-wrap: break-word;
+}
+
+.admin-booking-details a:hover {
+  text-decoration: underline;
+}
+
+.admin-booking-message {
+  padding: 20px;
+
+  border-left: 2px solid #1A1A1A;
+
+  background: #FAF9F6;
+}
+
+.admin-booking-message p {
+  margin: 10px 0 0;
+
+  color: #666;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+.admin-booking-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #DEDCD6;
+}
+
+.admin-booking-actions button {
+  padding: 10px 18px;
+
+  border: 1px solid #1A1A1A;
+
+  background: transparent;
+
+  font-size: 8px;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+}
+
+.booking-confirm-button {
+  background: #1A1A1A !important;
+
+  color: #fff;
+}
+
+.booking-confirm-button:hover {
+  background: #333 !important;
+}
+
+.booking-reject-button {
+  color: #8B5555;
+
+  border-color: #B99A9A !important;
+}
+
+.booking-reject-button:hover {
+  background: #F2E2E2;
+}
+
+.booking-delete-button {
+  color: #777;
+
+  border-color: #CFCBC3 !important;
+}
+
+.booking-delete-button:hover {
+  background: #E8E6E1;
+}
+
+.admin-booking-actions button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+@media (max-width: 850px) {
+
+  .admin-bookings-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .admin-booking-details {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+
+  .admin-bookings-page {
+    padding: 40px 20px;
+  }
+
+  .admin-bookings-header-actions {
+    width: 100%;
+  }
+
+  .admin-booking-card {
+    padding: 20px;
+  }
+
+  .admin-booking-card-top {
+    flex-direction: column;
+  }
+
+  .admin-booking-details {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-booking-actions {
+    flex-direction: column;
+  }
+
+  .admin-booking-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ADMIN PORTFOLIO
+   LENS STUDIO — PREMIUM STYLE
+========================================================= */
+
+.admin-portfolio {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 90px 70px 120px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-portfolio-header {
+  margin-bottom: 85px;
+}
+
+.admin-portfolio-header .section-label,
+.admin-section-header .section-label {
+  margin: 0 0 22px;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #718096;
+}
+
+.admin-portfolio-header h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -3px;
+  color: #171717;
+}
+
+.admin-portfolio-header h1 span,
+.admin-section-header h2 span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.admin-portfolio-header > div > p:last-child {
+  margin-top: 28px;
+  font-size: 16px;
+  color: #718096;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.admin-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.admin-section-header h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: #171717;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.admin-portfolio-form-section {
+  padding: 55px;
+  margin-bottom: 110px;
+  background: #f7f5f1;
+  border: 1px solid #dfdcd6;
+}
+
+.admin-portfolio-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 35px;
+}
+
+.form-group {
+  min-width: 0;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #718096;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17px 18px;
+  border: 1px solid #d8d5cf;
+  border-radius: 0;
+  background: #fff;
+  color: #202020;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #171717;
+  box-shadow: 0 0 0 1px #171717;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a4a09a;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.form-group input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px dashed #c9c5bd;
+  background: #fff;
+  color: #718096;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  margin-right: 18px;
+  padding: 11px 20px;
+  border: 1px solid #171717;
+  background: #171717;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: #fff;
+  color: #171717;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 10px;
+  color: #99948c;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.admin-checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 13px;
+  margin-top: 31px;
+  cursor: pointer;
+  color: #333 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-size: 14px !important;
+}
+
+.admin-checkbox-label input {
+  width: 17px;
+  height: 17px;
+  accent-color: #171717;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.admin-portfolio-submit {
+  grid-column: 1 / -1;
+  padding-top: 12px;
+}
+
+.booking-submit {
+  min-width: 190px;
+  padding: 17px 28px;
+  border: 1px solid #171717;
+  background: #171717;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.booking-submit:hover {
+  background: #fff;
+  color: #171717;
+  transform: translateY(-2px);
+}
+
+.booking-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   REFRESH / CANCEL BUTTON
+========================================================= */
+
+.admin-refresh-button {
+  padding: 13px 22px;
+  border: 1px solid #171717;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-refresh-button:hover {
+  background: #171717;
+  color: #fff;
+}
+
+.admin-refresh-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR
+========================================================= */
+
+.admin-state {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 22px;
+  margin-bottom: 35px;
+  border: 1px solid #d9ddd8;
+  background: #f4f7f3;
+  color: #526052;
+  font-size: 14px;
+}
+
+.admin-state-error {
+  border-color: #e0c8c8;
+  background: #faf3f3;
+  color: #9a5c5c;
+}
+
+
+/* =========================================================
+   PORTFOLIO LIST
+========================================================= */
+
+.admin-portfolio-list {
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   PORTFOLIO GRID
+========================================================= */
+
+.admin-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+
+/* =========================================================
+   PORTFOLIO CARD
+========================================================= */
+
+.admin-portfolio-card {
+  overflow: hidden;
+  border: 1px solid #dedbd5;
+  background: #f7f5f1;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.admin-portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.admin-portfolio-image {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  background: #e8e5df;
+}
+
+.admin-portfolio-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.admin-portfolio-card:hover
+.admin-portfolio-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   FEATURED BADGE
+========================================================= */
+
+.admin-featured-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 9px 14px;
+  background: #171717;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.admin-portfolio-card-content {
+  padding: 28px 30px 30px;
+}
+
+.admin-portfolio-card-content > p {
+  margin: 0 0 9px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b8580;
+}
+
+.admin-portfolio-card-content h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #171717;
+}
+
+.admin-portfolio-card-content > span {
+  display: block;
+  margin-bottom: 25px;
+  color: #6f6a64;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.admin-portfolio-card-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #dedbd5;
+}
+
+.admin-portfolio-card-actions button {
+  min-width: 90px;
+  padding: 11px 19px;
+  border: 1px solid #171717;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-portfolio-card-actions button:first-child:hover {
+  background: #171717;
+  color: #fff;
+}
+
+.admin-portfolio-card-actions button:last-child {
+  border-color: #c9a7a7;
+  color: #9a6666;
+}
+
+.admin-portfolio-card-actions button:last-child:hover {
+  background: #9a6666;
+  color: #fff;
+  border-color: #9a6666;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-portfolio {
+    padding: 70px 40px 100px;
+  }
+
+  .admin-portfolio-form-section {
+    padding: 40px;
+  }
+
+  .admin-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-portfolio-image {
+    height: 430px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .admin-portfolio {
+    padding: 55px 22px 80px;
+  }
+
+  .admin-portfolio-header {
+    margin-bottom: 60px;
+  }
+
+  .admin-portfolio-header h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .admin-portfolio-form-section {
+    padding: 28px 20px;
+    margin-bottom: 75px;
+  }
+
+  .admin-portfolio-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .admin-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-section-header h2 {
+    font-size: 40px;
+  }
+
+  .admin-portfolio-submit {
+    grid-column: auto;
+  }
+
+  .admin-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-portfolio-image {
+    height: 300px;
+  }
+
+  .admin-portfolio-card-content {
+    padding: 24px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .admin-portfolio {
+    padding: 45px 16px 70px;
+  }
+
+  .admin-portfolio-header h1 {
+    font-size: 40px;
+  }
+
+  .admin-portfolio-form-section {
+    padding: 22px 16px;
+  }
+
+  .admin-portfolio-image {
+    height: 250px;
+  }
+
+  .admin-portfolio-card-actions {
+    flex-direction: column;
+  }
+
+  .admin-portfolio-card-actions button {
+    width: 100%;
+  }
+
+  .booking-submit {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ADMIN SERVICES - PREMIUM DESIGN
+   ========================================================= */
+
+.admin-services {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 70px 100px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-services-header {
+  margin-bottom: 70px;
+}
+
+.admin-services-header .section-label {
+  margin-bottom: 18px;
+}
+
+.admin-services-header h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 0 0 22px;
+  color: #171717;
+}
+
+.admin-services-header h1 span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.admin-services-header > div > p:last-child {
+  font-size: 16px;
+  color: #777;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.admin-services-form-section {
+  background: #f7f5f0;
+  border: 1px solid #ddd9d0;
+  padding: 50px;
+  margin-bottom: 80px;
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.admin-section-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  margin: 8px 0 0;
+  color: #171717;
+}
+
+.admin-section-header h2 span {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.admin-services-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 35px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.admin-services-form input,
+.admin-services-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d8d4cc;
+  background: #fff;
+  padding: 17px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #222;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.admin-services-form input {
+  height: 54px;
+}
+
+.admin-services-form textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.admin-services-form input:focus,
+.admin-services-form textarea:focus {
+  border-color: #222;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+.admin-services-form input::placeholder,
+.admin-services-form textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   ACTIVE CHECKBOX
+   ========================================================= */
+
+.admin-checkbox-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 12px;
+  height: 54px;
+  padding-top: 20px;
+  cursor: pointer;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+.admin-checkbox-label input {
+  width: 18px !important;
+  height: 18px !important;
+  accent-color: #171717;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.admin-services-submit {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.admin-services-submit .booking-submit {
+  min-width: 220px;
+  height: 56px;
+  padding: 0 28px;
+  border: none;
+  background: #171717;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-services-submit .booking-submit:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.admin-services-submit .booking-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   REFRESH / CANCEL BUTTON
+   ========================================================= */
+
+.admin-refresh-button {
+  background: transparent;
+  border: 1px solid #222;
+  padding: 13px 22px;
+  min-width: 110px;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-refresh-button:hover {
+  background: #171717;
+  color: #fff;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.admin-state {
+  padding: 22px 25px;
+  margin-bottom: 25px;
+  background: #f7f5f0;
+  border: 1px solid #ddd9d0;
+  color: #555;
+  font-size: 14px;
+}
+
+.admin-state-error {
+  background: #faf0f0;
+  border-color: #dfbcbc;
+  color: #a34b4b;
+}
+
+
+/* =========================================================
+   SERVICES LIST
+   ========================================================= */
+
+.admin-services-list {
+  margin-top: 20px;
+}
+
+.admin-services-list .admin-section-header {
+  margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+   ========================================================= */
+
+.admin-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.admin-service-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #dedbd4;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.admin-service-card:hover {
+  border-color: #bdb8ae;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.admin-service-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-service-card-top > span:first-child {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.service-status {
+  padding: 7px 12px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.service-status.active {
+  background: #edf6ef;
+  color: #39734a;
+}
+
+.service-status.inactive {
+  background: #f5eeee;
+  color: #a25a5a;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.admin-service-card-content {
+  min-height: 145px;
+}
+
+.admin-service-card-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 15px;
+  color: #171717;
+}
+
+.admin-service-card-content p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.admin-service-card-content strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+   ========================================================= */
+
+.admin-service-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 1px solid #e6e2db;
+}
+
+.admin-service-card-actions button {
+  min-width: 85px;
+  padding: 11px 18px;
+  background: transparent;
+  border: 1px solid #d0ccc4;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-service-card-actions button:first-child:hover {
+  background: #171717;
+  color: #fff;
+  border-color: #171717;
+}
+
+.admin-service-card-actions button:last-child {
+  color: #a35b5b;
+  border-color: #d9baba;
+}
+
+.admin-service-card-actions button:last-child:hover {
+  background: #a35b5b;
+  color: #fff;
+  border-color: #a35b5b;
+}
+
+
+/* =========================================================
+   PREMIUM ICONS
+   No package required
+   ========================================================= */
+
+.admin-services-header .section-label::before {
+  content: "✦";
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.admin-services-form-section
+  .admin-section-header
+  .section-label::before {
+  content: "＋";
+  margin-right: 8px;
+}
+
+.admin-services-list
+  .admin-section-header
+  .section-label::before {
+  content: "☷";
+  margin-right: 8px;
+}
+
+.form-group label[for="service-title"]::before {
+  content: "✧";
+  margin-right: 8px;
+}
+
+.form-group label[for="service-price"]::before {
+  content: "₹";
+  margin-right: 8px;
+}
+
+.form-group label[for="service-description"]::before {
+  content: "☰";
+  margin-right: 8px;
+}
+
+.form-group label[for="service-order"]::before {
+  content: "≡";
+  margin-right: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .admin-services {
+    padding: 60px 35px 80px;
+  }
+
+  .admin-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .admin-services {
+    padding: 45px 20px 60px;
+  }
+
+  .admin-services-header h1 {
+    font-size: 48px;
+  }
+
+  .admin-services-form-section {
+    padding: 30px 20px;
+  }
+
+  .admin-services-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .admin-services-submit {
+    grid-column: auto;
+  }
+
+  .admin-services-submit .booking-submit {
+    width: 100%;
+  }
+
+  .admin-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-section-header h2 {
+    font-size: 34px;
+  }
+
+}
+/* =========================================
+   QUICK FIX - ADMIN SERVICE IMAGE OVERFLOW
+========================================= */
+
+main img {
+  max-width: 100% !important;
+}
+
+.admin-service-card,
+.service-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.admin-service-card-image,
+.service-card-image {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 300px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.admin-service-card-image img,
+.service-card-image img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+/* Remove horizontal page overflow */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   PREMIUM SUCCESS TOAST
+========================================================= */
+
+.premium-toast {
+  position: fixed;
+
+  top: 30px;
+  right: 30px;
+
+  z-index: 99999;
+
+  width: min(400px, calc(100vw - 40px));
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedbd5;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  animation:
+    toast-slide-in 0.4s ease forwards;
+}
+
+
+/* =========================================================
+   SUCCESS TOAST
+========================================================= */
+
+.success-toast {
+  border-left: 4px solid #39734a;
+}
+
+
+/* =========================================================
+   TOAST ICON
+========================================================= */
+
+.toast-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf6ef;
+
+  color: #39734a;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TOAST CONTENT
+========================================================= */
+
+.toast-content {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.toast-content strong {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: #171717;
+}
+
+
+.toast-content span {
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #777777;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   TOAST CLOSE BUTTON
+========================================================= */
+
+.toast-close {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888888;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.toast-close:hover {
+  color: #171717;
+
+  background: #f3f1ec;
+}
+
+
+/* =========================================================
+   TOAST ANIMATION
+========================================================= */
+
+@keyframes toast-slide-in {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   TOAST MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .premium-toast {
+    top: 20px;
+    right: 20px;
+    left: 20px;
+
+    width: auto;
+
+    padding: 15px;
+  }
+
+  .toast-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 16px;
+  }
+
+  .toast-content strong {
+    font-size: 11px;
+  }
+
+  .toast-content span {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   ADMIN PRICING MANAGEMENT
+========================================================= */
+
+.admin-pricing-page {
+  min-height: 100vh;
+
+  padding: 80px 60px 100px;
+
+  background: #FAF9F6;
+
+  color: #1A1A1A;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-pricing-header {
+  max-width: 1100px;
+
+  margin: 0 auto 60px;
+}
+
+.admin-pricing-header .section-label {
+  margin-bottom: 15px;
+}
+
+.admin-pricing-header .section-label::before {
+  content: "✦";
+
+  margin-right: 9px;
+
+  font-size: 11px;
+}
+
+.admin-pricing-header h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 85px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -1.5px;
+
+  color: #171717;
+}
+
+.admin-pricing-header > p:last-child {
+  max-width: 600px;
+
+  margin: 22px 0 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.admin-pricing-form-section {
+  max-width: 1100px;
+
+  margin: 0 auto 80px;
+
+  padding: 45px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedbd4;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.035);
+}
+
+
+.admin-pricing-form-section > .section-label {
+  margin-bottom: 12px;
+}
+
+.admin-pricing-form-section > .section-label::before {
+  content: "＋";
+
+  margin-right: 8px;
+}
+
+
+.admin-pricing-form-section h2 {
+  margin: 0 0 35px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 42px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-pricing-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+
+.admin-pricing-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 28px 35px;
+}
+
+
+.admin-field {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.admin-field label {
+  margin-bottom: 10px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #666666;
+}
+
+
+.admin-field label::before {
+  content: "✧";
+
+  margin-right: 7px;
+
+  color: #888888;
+}
+
+
+.admin-field input,
+.admin-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 16px 18px;
+
+  border: 1px solid #d8d4cc;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #222222;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.admin-field input {
+  height: 54px;
+}
+
+
+.admin-field textarea {
+  min-height: 135px;
+
+  resize: vertical;
+
+  line-height: 1.65;
+}
+
+
+.admin-field input:focus,
+.admin-field textarea:focus {
+  border-color: #222222;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.035);
+}
+
+
+.admin-field input::placeholder,
+.admin-field textarea::placeholder {
+  color: #aaaaaa;
+}
+
+
+.admin-field small {
+  margin-top: 8px;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   NUMBER / PRICE INPUT
+========================================================= */
+
+.admin-field input[type="number"] {
+  appearance: textfield;
+}
+
+.admin-field input[type="number"]::-webkit-inner-spin-button,
+.admin-field input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+
+  appearance: none;
+}
+
+
+/* =========================================================
+   CHECKBOX OPTIONS
+========================================================= */
+
+.admin-pricing-options {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  padding-top: 5px;
+
+  border-top: 1px solid #e5e1da;
+}
+
+
+.admin-checkbox {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 50px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  color: #444444;
+}
+
+
+.admin-checkbox input {
+  width: 17px;
+
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: #171717;
+
+  cursor: pointer;
+}
+
+
+.admin-checkbox span {
+  transition: color 0.25s ease;
+}
+
+
+.admin-checkbox:hover span {
+  color: #171717;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.admin-pricing-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-top: 8px;
+}
+
+
+.admin-primary-button,
+.admin-secondary-button {
+  min-height: 54px;
+
+  padding: 0 28px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.admin-primary-button {
+  border: 1px solid #171717;
+
+  background: #171717;
+
+  color: #ffffff;
+}
+
+
+.admin-primary-button:hover:not(:disabled) {
+  background: #333333;
+
+  border-color: #333333;
+
+  transform: translateY(-2px);
+}
+
+
+.admin-primary-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+.admin-secondary-button {
+  border: 1px solid #d0ccc4;
+
+  background: transparent;
+
+  color: #555555;
+}
+
+
+.admin-secondary-button:hover {
+  border-color: #171717;
+
+  background: #171717;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PACKAGE LIST HEADER
+========================================================= */
+
+.admin-pricing-list-section {
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+.admin-pricing-list-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+
+.admin-pricing-list-header .section-label::before {
+  content: "☷";
+
+  margin-right: 8px;
+}
+
+
+.admin-pricing-list-header h2 {
+  margin: 8px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   REFRESH
+========================================================= */
+
+.admin-refresh-button {
+  min-width: 110px;
+
+  padding: 13px 22px;
+
+  border: 1px solid #222222;
+
+  background: transparent;
+
+  color: #222222;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.admin-refresh-button:hover:not(:disabled) {
+  background: #171717;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+.admin-refresh-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PACKAGE GRID
+========================================================= */
+
+.admin-pricing-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   PACKAGE CARD
+========================================================= */
+
+.admin-pricing-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedbd4;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.admin-pricing-card:hover {
+  border-color: #bdb8ae;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   POPULAR CARD
+========================================================= */
+
+.admin-pricing-card-popular {
+  border-color: #1A1A1A;
+}
+
+
+.admin-popular-badge {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  padding: 8px 13px;
+
+  background: #171717;
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   INACTIVE CARD
+========================================================= */
+
+.admin-pricing-card-inactive {
+  opacity: 0.68;
+}
+
+
+.admin-pricing-card-inactive:hover {
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.admin-pricing-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+
+.admin-pricing-number {
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  color: #999999;
+}
+
+
+.admin-pricing-card-top > span:first-child::before {
+  content: "#";
+
+  margin-right: 2px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.admin-status-active,
+.admin-status-inactive {
+  padding: 7px 11px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+
+.admin-status-active {
+  background: #edf6ef;
+
+  color: #39734a;
+}
+
+
+.admin-status-inactive {
+  background: #f5eeee;
+
+  color: #a25a5a;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.admin-pricing-card h3 {
+  margin: 0 0 14px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 36px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #171717;
+}
+
+
+.admin-pricing-description {
+  min-height: 55px;
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.admin-pricing-price {
+  margin-top: 25px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid #dedbd4;
+
+  border-bottom: 1px solid #dedbd4;
+}
+
+
+.admin-pricing-price span {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #999999;
+}
+
+
+.admin-pricing-price strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.admin-pricing-features {
+  flex: 1;
+
+  padding: 20px 0;
+}
+
+
+.admin-pricing-features > div {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 7px 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #555555;
+}
+
+
+.admin-pricing-features > div span {
+  flex-shrink: 0;
+
+  color: #39734a;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.admin-pricing-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e6e2db;
+}
+
+
+.admin-pricing-actions button {
+  min-height: 38px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d0ccc4;
+
+  background: transparent;
+
+  color: #444444;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.admin-pricing-actions button:hover {
+  border-color: #171717;
+
+  background: #171717;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STATUS ACTION
+========================================================= */
+
+.admin-action-status.active {
+  color: #39734a;
+
+  border-color: #c7ddcc;
+}
+
+
+.admin-action-status.active:hover {
+  background: #39734a;
+
+  border-color: #39734a;
+
+  color: #ffffff;
+}
+
+
+.admin-action-status.inactive {
+  color: #a25a5a;
+
+  border-color: #dfc1c1;
+}
+
+
+.admin-action-status.inactive:hover {
+  background: #a25a5a;
+
+  border-color: #a25a5a;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.admin-pricing-actions .admin-action-delete {
+  color: #a35b5b;
+
+  border-color: #d9baba;
+}
+
+
+.admin-pricing-actions .admin-action-delete:hover {
+  background: #a35b5b;
+
+  border-color: #a35b5b;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING STATE
+========================================================= */
+
+.admin-pricing-list-section .admin-state {
+  margin: 0;
+
+  padding: 25px;
+
+  background: #f7f5f0;
+
+  border: 1px solid #ddd9d0;
+
+  color: #666666;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PRICING TOAST
+========================================================= */
+
+.admin-toast {
+  position: fixed;
+
+  top: 30px;
+
+  right: 30px;
+
+  z-index: 99999;
+
+  width: min(400px, calc(100vw - 40px));
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedbd5;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  animation:
+    admin-pricing-toast-in 0.35s ease forwards;
+}
+
+
+.admin-toast-success {
+  border-left: 4px solid #39734a;
+}
+
+
+.admin-toast-error {
+  border-left: 4px solid #a25a5a;
+}
+
+
+.admin-toast-icon {
+  width: 36px;
+
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf6ef;
+
+  color: #39734a;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+
+.admin-toast-error .admin-toast-icon {
+  background: #f5eeee;
+
+  color: #a25a5a;
+}
+
+
+.admin-toast-content {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.admin-toast-content strong {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  color: #171717;
+}
+
+
+.admin-toast-content span {
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #777777;
+
+  word-break: break-word;
+}
+
+
+.admin-toast button {
+  width: 28px;
+
+  height: 28px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888888;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-toast button:hover {
+  color: #171717;
+
+  background: #f3f1ec;
+}
+
+
+@keyframes admin-pricing-toast-in {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   ADMIN PRICING RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .admin-pricing-page {
+    padding: 60px 35px 80px;
+  }
+
+  .admin-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .admin-pricing-page {
+    padding: 45px 20px 60px;
+  }
+
+
+  .admin-pricing-header {
+    margin-bottom: 45px;
+  }
+
+
+  .admin-pricing-header h1 {
+    font-size: 52px;
+  }
+
+
+  .admin-pricing-form-section {
+    padding: 30px 22px;
+  }
+
+
+  .admin-pricing-form-section h2 {
+    font-size: 36px;
+  }
+
+
+  .admin-pricing-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-pricing-options {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding-top: 15px;
+  }
+
+
+  .admin-pricing-form-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .admin-primary-button,
+  .admin-secondary-button {
+    width: 100%;
+  }
+
+
+  .admin-pricing-list-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 25px;
+  }
+
+
+  .admin-pricing-list-header h2 {
+    font-size: 40px;
+  }
+
+
+  .admin-refresh-button {
+    width: 100%;
+  }
+
+
+  .admin-pricing-card {
+    padding: 25px;
+  }
+
+
+  .admin-pricing-card h3 {
+    font-size: 32px;
+  }
+
+
+  .admin-pricing-actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .admin-pricing-actions button {
+    width: 100%;
+  }
+
+
+  .admin-toast {
+    top: 20px;
+
+    right: 20px;
+
+    left: 20px;
+
+    width: auto;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .admin-pricing-page {
+    padding: 35px 15px 50px;
+  }
+
+
+  .admin-pricing-header h1 {
+    font-size: 45px;
+  }
+
+
+  .admin-pricing-form-section {
+    padding: 25px 18px;
+  }
+
+
+  .admin-pricing-list-header h2 {
+    font-size: 36px;
+  }
+
+
+  .admin-pricing-card {
+    padding: 22px;
+  }
+
+
+  .admin-pricing-card-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .admin-pricing-price strong {
+    font-size: 34px;
+  }
+
+}
+
+
+/* =========================================================
+   ADMIN BOOKINGS - PREMIUM STATISTICS
+========================================================= */
+
+.admin-booking-stats {
+  width: 100%;
+  max-width: 1500px;
+  margin: 70px auto 55px;
+  padding: 0 6vw;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.admin-booking-stat-card {
+  position: relative;
+
+  min-height: 150px;
+  padding: 28px 26px;
+
+  background: #f8f7f3;
+  border: 1px solid #dedbd3;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.admin-booking-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #1b1b1b;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.admin-booking-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d6d3cc;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.admin-booking-stat-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-booking-stat-card > div > span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 500;
+
+  color: #77736c;
+}
+
+.admin-booking-stat-card > div > strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.admin-booking-stat-card:nth-child(1) {
+  border-top: 2px solid #1b1b1b;
+}
+
+.admin-booking-stat-card:nth-child(1)
+.admin-booking-stat-icon {
+  color: #1b1b1b;
+}
+
+
+/* =========================================================
+   PENDING - AMBER
+========================================================= */
+
+.admin-booking-stat-card:nth-child(2) {
+  border-top: 2px solid #b18432;
+}
+
+.admin-booking-stat-card:nth-child(2)
+.admin-booking-stat-icon {
+  color: #b18432;
+  border-color: #dfcfac;
+}
+
+.admin-booking-stat-card:nth-child(2)
+.admin-booking-stat-card > div > strong {
+  color: #b18432;
+}
+
+
+/* =========================================================
+   CONFIRMED - GREEN
+========================================================= */
+
+.admin-booking-stat-card:nth-child(3) {
+  border-top: 2px solid #3d7954;
+}
+
+.admin-booking-stat-card:nth-child(3)
+.admin-booking-stat-icon {
+  color: #3d7954;
+  border-color: #c5d9cb;
+}
+
+.admin-booking-stat-card:nth-child(3)
+.admin-booking-stat-card > div > strong {
+  color: #3d7954;
+}
+
+
+/* =========================================================
+   REJECTED - RED
+========================================================= */
+
+.admin-booking-stat-card:nth-child(4) {
+  border-top: 2px solid #b64a4a;
+}
+
+.admin-booking-stat-card:nth-child(4)
+.admin-booking-stat-icon {
+  color: #b64a4a;
+  border-color: #e1c2c2;
+}
+
+.admin-booking-stat-card:nth-child(4)
+.admin-booking-stat-card > div > strong {
+  color: #b64a4a;
+}
+
+
+/* =========================================================
+   CANCELLED - GRAY
+========================================================= */
+
+.admin-booking-stat-card:nth-child(5) {
+  border-top: 2px solid #77736c;
+}
+
+.admin-booking-stat-card:nth-child(5)
+.admin-booking-stat-icon {
+  color: #77736c;
+  border-color: #d5d2cb;
+}
+
+.admin-booking-stat-card:nth-child(5)
+.admin-booking-stat-card > div > strong {
+  color: #77736c;
+}
+
+
+/* =========================================================
+   BOOKING CONTENT
+========================================================= */
+
+.admin-bookings-content {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+  padding: 0 6vw 100px;
+}
+
+
+/* =========================================================
+   BOOKING LIST
+========================================================= */
+
+.admin-bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =========================================================
+   BOOKING CARD
+========================================================= */
+
+.admin-booking-card {
+  background: #f8f7f3;
+  border: 1px solid #dedbd3;
+
+  padding: 38px;
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.admin-booking-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.admin-booking-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #dedbd3;
+}
+
+.booking-card-label {
+  margin: 0 0 10px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+
+  color: #88847c;
+}
+
+.admin-booking-card-top h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+  font-weight: 400;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 105px;
+
+  padding: 9px 14px;
+
+  border: 1px solid;
+
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+
+/* Pending */
+
+.booking-status.pending {
+  color: #a47524;
+  background: #f7f0df;
+  border-color: #dccba7;
+}
+
+
+/* Confirmed */
+
+.booking-status.confirmed {
+  color: #39734e;
+  background: #eaf3ed;
+  border-color: #bfd5c6;
+}
+
+
+/* Rejected */
+
+.booking-status.rejected {
+  color: #b34747;
+  background: #f8eaea;
+  border-color: #dfc0c0;
+}
+
+
+/* Cancelled */
+
+.booking-status.cancelled {
+  color: #77736c;
+  background: #eeeeeb;
+  border-color: #d2d0ca;
+}
+
+
+/* =========================================================
+   BOOKING DETAILS
+========================================================= */
+
+.admin-booking-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 28px;
+
+  padding: 30px 0;
+
+  border-bottom: 1px solid #dedbd3;
+}
+
+.admin-booking-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-booking-details span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #8b877f;
+}
+
+.admin-booking-details strong,
+.admin-booking-details a {
+  font-size: 14px;
+
+  color: #292929;
+
+  text-decoration: none;
+}
+
+.admin-booking-details a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.admin-booking-message {
+  padding: 25px 0;
+
+  border-bottom: 1px solid #dedbd3;
+}
+
+.admin-booking-message > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #8b877f;
+}
+
+.admin-booking-message p {
+  max-width: 850px;
+
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #55514b;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.admin-booking-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 25px;
+}
+
+.admin-booking-actions button {
+  min-width: 105px;
+
+  padding: 12px 18px;
+
+  background: transparent;
+
+  border: 1px solid #cfcac1;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-booking-actions button:hover {
+  background: #1b1b1b;
+  color: #fff;
+  border-color: #1b1b1b;
+}
+
+.booking-confirm-button {
+  color: #39734e;
+  border-color: #bfd5c6 !important;
+}
+
+.booking-confirm-button:hover {
+  background: #39734e !important;
+  border-color: #39734e !important;
+}
+
+.booking-reject-button {
+  color: #b34747;
+  border-color: #dfc0c0 !important;
+}
+
+.booking-reject-button:hover {
+  background: #b34747 !important;
+  border-color: #b34747 !important;
+}
+
+.booking-cancel-button {
+  color: #77736c;
+}
+
+.booking-delete-button {
+  color: #b34747;
+  border-color: #dfc0c0 !important;
+}
+
+.booking-delete-button:hover {
+  background: #b34747 !important;
+  border-color: #b34747 !important;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.admin-booking-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   ERROR / EMPTY / LOADING
+========================================================= */
+
+.admin-bookings-error {
+  max-width: 1500px;
+
+  margin: 0 auto 30px;
+  padding: 16px 6vw;
+
+  color: #a83e3e;
+  background: #f9eaea;
+
+  border-left: 3px solid #b64a4a;
+}
+
+.admin-state {
+  padding: 70px 30px;
+
+  text-align: center;
+
+  border: 1px solid #dedbd3;
+
+  color: #77736c;
+
+  font-size: 14px;
+  letter-spacing: 0.5px;
+
+  background: #f8f7f3;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.admin-toast {
+  position: fixed;
+
+  top: 30px;
+  right: 30px;
+
+  z-index: 9999;
+
+  min-width: 360px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 18px 20px;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.admin-toast-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+}
+
+.admin-toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  flex: 1;
+}
+
+.admin-toast-content strong {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.admin-toast-content span {
+  font-size: 13px;
+  color: #777;
+}
+
+.admin-toast button {
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  color: #777;
+}
+
+.admin-toast-success {
+  border-left: 3px solid #3d7954;
+}
+
+.admin-toast-success .admin-toast-icon {
+  background: #eaf3ed;
+  color: #39734e;
+}
+
+.admin-toast-error {
+  border-left: 3px solid #b64a4a;
+}
+
+.admin-toast-error .admin-toast-icon {
+  background: #f8eaea;
+  color: #b34747;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-booking-stats {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .admin-booking-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    padding: 0 25px;
+    margin-top: 45px;
+  }
+
+  .admin-bookings-content {
+    padding: 0 25px 70px;
+  }
+
+  .admin-booking-card {
+    padding: 25px;
+  }
+
+  .admin-booking-card-top {
+    flex-direction: column;
+  }
+
+  .admin-booking-details {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .admin-booking-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .admin-booking-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-booking-stat-card {
+    min-height: 120px;
+  }
+
+  .admin-booking-stat-card > div > strong {
+    font-size: 36px;
+  }
+
+  .admin-toast {
+    left: 15px;
+    right: 15px;
+
+    min-width: auto;
+  }
+
+}
+
+/* =========================================================
+   ADMIN BOOKING FILTER TOOLBAR
+========================================================= */
+
+.admin-booking-stat-card {
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-booking-stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.admin-booking-stat-card.active {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Pending */
+
+.admin-booking-stat-card.pending-stat.active {
+  border-color: #c99432;
+}
+
+/* Confirmed */
+
+.admin-booking-stat-card.confirmed-stat.active {
+  border-color: #3d7d5a;
+  box-shadow: 0 12px 30px rgba(61, 125, 90, 0.08);
+}
+
+/* Rejected */
+
+.admin-booking-stat-card.rejected-stat.active {
+  border-color: #c65353;
+  box-shadow: 0 12px 30px rgba(198, 83, 83, 0.08);
+}
+
+/* Cancelled */
+
+.admin-booking-stat-card.cancelled-stat.active {
+  border-color: #888;
+}
+
+
+/* =========================================================
+   SEARCH TOOLBAR
+========================================================= */
+
+.admin-booking-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 45px 0 30px;
+}
+
+.admin-booking-search {
+  width: 100%;
+  max-width: 620px;
+  height: 58px;
+  border: 1px solid #ddd9d1;
+  background: #faf9f6;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  transition: border-color 0.25s ease;
+}
+
+.admin-booking-search:focus-within {
+  border-color: #222;
+}
+
+.admin-booking-search > span {
+  font-size: 22px;
+  margin-right: 12px;
+  color: #777;
+}
+
+.admin-booking-search input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: #171717;
+}
+
+.admin-booking-search input::placeholder {
+  color: #aaa;
+}
+
+.admin-booking-search button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.admin-booking-filter-info {
+  white-space: nowrap;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.admin-booking-filter-info strong {
+  color: #222;
+}
+
+
+/* =========================================================
+   STATUS COLORS
+========================================================= */
+
+.booking-status.confirmed {
+  color: #347451;
+  border-color: #b9d8c5;
+  background: #f1f8f3;
+}
+
+.booking-status.rejected {
+  color: #bd4b4b;
+  border-color: #e7bbbb;
+  background: #fff5f5;
+}
+
+.booking-status.pending {
+  color: #b07a19;
+  border-color: #e5d0a4;
+  background: #fffaf0;
+}
+
+.booking-status.cancelled {
+  color: #777;
+  border-color: #d5d2cc;
+  background: #f7f6f3;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .admin-booking-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-booking-search {
+    max-width: none;
+  }
+
+  .admin-booking-filter-info {
+    text-align: right;
+  }
+}
